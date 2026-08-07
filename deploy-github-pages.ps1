@@ -149,6 +149,55 @@ function Commit-Site {
   Invoke-Git @("commit", "-m", $message)
 }
 
+function Invoke-GitIn([string]$directory, [string[]]$arguments, [switch]$AllowFailure) {
+  Push-Location $directory
+  try {
+    & git @arguments
+    $code = $LASTEXITCODE
+    if ($code -ne 0 -and -not $AllowFailure) {
+      throw ("git failed in " + $directory + ": git " + ($arguments -join " "))
+    }
+    return $code
+  }
+  finally {
+    Pop-Location
+  }
+}
+
+function Copy-SiteFile([string]$relative, [string]$targetRoot) {
+  $source = Join-Path $siteRoot $relative
+  $target = Join-Path $targetRoot $relative
+  $targetParent = Split-Path -Parent $target
+  New-Item -ItemType Directory -Force -Path $targetParent | Out-Null
+  Copy-Item -LiteralPath $source -Destination $target -Force
+}
+
+function Publish-PagesBranch([string]$remoteUrl) {
+  Write-Step "Prepare gh-pages branch"
+  $deployDir = Join-Path $siteRoot ".deploy-temp"
+  if (Test-Path -LiteralPath $deployDir) {
+    Remove-Item -LiteralPath $deployDir -Recurse -Force
+  }
+  New-Item -ItemType Directory -Force -Path $deployDir | Out-Null
+
+  foreach ($file in @("index.html", "styles.css", "app.js", "plugins.json", ".nojekyll")) {
+    Copy-SiteFile $file $deployDir
+  }
+  foreach ($dir in @("assets", "downloads")) {
+    Copy-Item -LiteralPath (Join-Path $siteRoot $dir) -Destination (Join-Path $deployDir $dir) -Recurse -Force
+  }
+
+  $null = Invoke-GitIn $deployDir @("init", "-b", "gh-pages")
+  $null = Invoke-GitIn $deployDir @("config", "user.name", "zhou shangjie")
+  $null = Invoke-GitIn $deployDir @("config", "user.email", "codex-local@example.com")
+  $null = Invoke-GitIn $deployDir @("add", "-A")
+  $null = Invoke-GitIn $deployDir @("commit", "-m", "Publish GitHub Pages site")
+  $null = Invoke-GitIn $deployDir @("remote", "add", "origin", $remoteUrl)
+
+  Write-Step "Push gh-pages branch"
+  $null = Invoke-GitIn $deployDir @("push", "-f", "origin", "gh-pages")
+}
+
 try {
   Set-Location $siteRoot
   "" | Set-Content -LiteralPath $logPath -Encoding UTF8
@@ -177,6 +226,7 @@ try {
 
   Write-Step "Push to GitHub"
   Invoke-Git @("push", "-u", "origin", $branch)
+  Publish-PagesBranch $remoteUrl
 
   $config = Read-Config
   $siteUrl = if ([string]::IsNullOrWhiteSpace($config.siteUrl)) { Get-RepositoryPageUrl $remoteUrl } else { $config.siteUrl.Trim() }

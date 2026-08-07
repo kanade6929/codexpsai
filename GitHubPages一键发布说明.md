@@ -11,7 +11,7 @@
    `一键发布插件合集到GitHubPages.bat`
 6. 第一次运行时，把仓库 HTTPS 地址粘贴进去。
 7. 如果 Git 弹出 GitHub 登录窗口，按提示登录授权。
-8. 如果 GitHub 没有自动打开 Pages，在仓库里进入 `Settings > Pages`，确认 Source 是 `GitHub Actions`。
+8. 如果 GitHub 没有自动打开 Pages，在仓库里进入 `Settings > Pages`，选择 `Deploy from a branch`，分支选 `gh-pages`，目录选 `/ (root)`。
 
 ## 以后更新
 
