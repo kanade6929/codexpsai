@@ -1,0 +1,388 @@
+﻿{
+    "generatedAt":  "2026-08-07 11:02:54",
+    "pluginCount":  9,
+    "plugins":  [
+                    {
+                        "slug":  "ps-artboard-four-piece",
+                        "name":  "PS批量导出画板商品四件套",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-07-30",
+                        "apps":  [
+                                     "Photoshop"
+                                 ],
+                        "category":  "photoshop",
+                        "type":  "JSX",
+                        "status":  "文件级验证，需 Photoshop 实机确认",
+                        "summary":  "按可见画板批量生成商品主图、白底图、透明 PNG 和调整 PSD。",
+                        "requirements":  "Photoshop 2020-2025，含画板的 PSD/PSB 文件。",
+                        "install":  "把 JSX 放入 Photoshop 的 Presets/Scripts，重启后从 文件 \u003e 脚本 运行；也可用 文件 \u003e 脚本 \u003e 浏览 临时运行。",
+                        "notes":  [
+                                      "适合周边商品图批量导出。",
+                                      "已同步过工作区和交接包，实机导出仍建议用小文件复测。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-artboard-four-piece/ps-artboard-four-piece.zip",
+                        "packageName":  "ps-artboard-four-piece.zip",
+                        "packageSha256":  "232f9b4ebd2fc087b671d184ce1128ab0771031226e84c42f6c65b4064a05d70",
+                        "files":  [
+                                      {
+                                          "name":  "PS批量导出画板商品四件套_交接说明.docx",
+                                          "sizeBytes":  771501,
+                                          "sha256":  "cb792534e9cf5fb09f6fc504b95ac7a453075b6e0a6214f30fbb97d0d14502f0"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  554,
+                                          "sha256":  "f4c20efe115f43e16d5035dc36a2bb8c25c95c5ebff010221f5bb7b3f861839e"
+                                      },
+                                      {
+                                          "name":  "自动导出商品四件套图V1.jsx",
+                                          "sizeBytes":  32888,
+                                          "sha256":  "d1586d5293b2967227d24809cc936aa8ec317c4828be09d12d20aeed180d3ab1"
+                                      }
+                                  ],
+                        "sizeBytes":  779414,
+                        "fileCount":  3
+                    },
+                    {
+                        "slug":  "ps-existing-slice-export",
+                        "name":  "PS批量切图导出小助手",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-07-23",
+                        "apps":  [
+                                     "Photoshop"
+                                 ],
+                        "category":  "photoshop",
+                        "type":  "JSX + 安装脚本",
+                        "status":  "外发包已整理，需 Photoshop 实机确认",
+                        "summary":  "只导出 Photoshop 已经创建好的切片，不重新按参考线切图。",
+                        "requirements":  "Photoshop 2020+，PSD/PSB 内已有切片。",
+                        "install":  "优先运行包内 一键安装到Photoshop.ps1；也可手动复制 JSX 到 Presets/Scripts。",
+                        "notes":  [
+                                      "不会把参考线重新切成切片。",
+                                      "导出失败时应报错，不做逐张复制裁切 fallback。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-existing-slice-export/ps-existing-slice-export.zip",
+                        "packageName":  "ps-existing-slice-export.zip",
+                        "packageSha256":  "24a0dad5116d53602ba1855a5f9fd3199b029aeb5c4cd83d395fa124cc78da3c",
+                        "files":  [
+                                      {
+                                          "name":  "ps批量切图导出小助手.jsx",
+                                          "sizeBytes":  21132,
+                                          "sha256":  "6e44a8432d4bb1ff603b0e7d57c889ca425a2662c1b7f62dffd83258f87a426f"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  691,
+                                          "sha256":  "e81ee279e81c4f1cbda1f9e2a1f08429f6d52981789bc65b9380746664d8101b"
+                                      },
+                                      {
+                                          "name":  "一键安装到Photoshop.ps1",
+                                          "sizeBytes":  1327,
+                                          "sha256":  "ae90e16c2993967b9d2bf037fc515438b46c204815580bbe490974a156be3d1c"
+                                      }
+                                  ],
+                        "sizeBytes":  6738,
+                        "fileCount":  3
+                    },
+                    {
+                        "slug":  "ps-guide-slice-export",
+                        "name":  "PS参考线切片导出",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-07-23",
+                        "apps":  [
+                                     "Photoshop"
+                                 ],
+                        "category":  "photoshop",
+                        "type":  "JSX",
+                        "status":  "文件级验证，需 Photoshop 实机确认",
+                        "summary":  "按画布边缘和水平/垂直参考线生成切片，并选择 PNG/JPG 输出。",
+                        "requirements":  "Photoshop 2020+，当前文档已有参考线。",
+                        "install":  "文件 \u003e 脚本 \u003e 浏览 运行，或复制到 Presets/Scripts 后从脚本菜单运行。",
+                        "notes":  [
+                                      "PNG 保留透明，JPG 使用白底并以高质量输出。",
+                                      "这是参考线派生切片工具，不等同于现有切片导出工具。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-guide-slice-export/ps-guide-slice-export.zip",
+                        "packageName":  "ps-guide-slice-export.zip",
+                        "packageSha256":  "cd5575fd642d58222552d79769b56e18ceb0ba3e12c9aa5020eb0d9dcacf8d48",
+                        "files":  [
+                                      {
+                                          "name":  "一键导出参考线切片.jsx",
+                                          "sizeBytes":  12919,
+                                          "sha256":  "b5357d4cec6c79c4caf96ebca9a90d25d5ddc313b5528261d0319df895cbf79e"
+                                      },
+                                      {
+                                          "name":  "一键导出参考线切片_使用说明.txt",
+                                          "sizeBytes":  776,
+                                          "sha256":  "5be1d63785da777622006729f99a55ac77b8853bb43096902f244997adf1baa5"
+                                      }
+                                  ],
+                        "sizeBytes":  4781,
+                        "fileCount":  2
+                    },
+                    {
+                        "slug":  "ps-white-ink-layer",
+                        "name":  "PS白墨图层自动生成插件",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-08-05",
+                        "apps":  [
+                                     "Photoshop"
+                                 ],
+                        "category":  "photoshop",
+                        "type":  "JSX",
+                        "status":  "文件级验证，需 Photoshop 实机确认",
+                        "summary":  "根据当前选中图层或图层组的非透明区域生成白墨底版图层。",
+                        "requirements":  "Photoshop 2020+，适合透明贴纸、亚克力、UV 打印等文件。",
+                        "install":  "文件 \u003e 脚本 \u003e 浏览 运行，或复制到 Presets/Scripts 后从脚本菜单运行。",
+                        "notes":  [
+                                      "生产交付默认填充纯黑，浅蓝色只作为检查色。",
+                                      "生成结果是普通图层，不是专色通道。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-white-ink-layer/ps-white-ink-layer.zip",
+                        "packageName":  "ps-white-ink-layer.zip",
+                        "packageSha256":  "f0a8c8d3ab4a486d77361994bf0d0449030a769a2540db42e50602bf7f36a828",
+                        "files":  [
+                                      {
+                                          "name":  "PS_自动生成白墨图层.jsx",
+                                          "sizeBytes":  13666,
+                                          "sha256":  "abda5490b321418c885fc4fd04416bc9df31c6176eaa106bc0db7fa2b69dee79"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  2703,
+                                          "sha256":  "88d50f2da65c8b83dfefa764baf9b18841342dc813fd78fcf29e55b4d176da6e"
+                                      }
+                                  ],
+                        "sizeBytes":  5665,
+                        "fileCount":  2
+                    },
+                    {
+                        "slug":  "ps-ai-outline-stroke-v2",
+                        "name":  "PS轮廓化描边助手 V2",
+                        "version":  "2.0.0",
+                        "updatedAt":  "2026-07-09",
+                        "apps":  [
+                                     "Photoshop",
+                                     "Illustrator"
+                                 ],
+                        "category":  "bridge",
+                        "type":  "PS + AI 联动 JSX",
+                        "status":  "V2 主推版，需 PS/AI 实机确认",
+                        "summary":  "把 Photoshop 形状描边转成真实矢量轮廓，适合烫金、光油、刀线和专色版。",
+                        "requirements":  "Photoshop + Illustrator，建议先手动打开 Illustrator。",
+                        "install":  "在 Photoshop 运行 01_PS 脚本；若自动联动失败，再在 Illustrator 运行 02_AI 备用脚本。",
+                        "notes":  [
+                                      "旧测试版不放入主下载卡片。",
+                                      "位图描摹是测试功能，正式交付前需要人工检查路径。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/ps-ai-outline-stroke-v2.zip",
+                        "packageName":  "ps-ai-outline-stroke-v2.zip",
+                        "packageSha256":  "a4da5eac546caf9a84b5ec1cfb2f959b8c5cb34e5ae331a2b7fccdd713fb7666",
+                        "files":  [
+                                      {
+                                          "name":  "01_PS运行_轮廓化描边助手V2.jsx",
+                                          "sizeBytes":  27264,
+                                          "sha256":  "52b42d932af13fbf6f81a05076400ebaec068ad9aa9b96c5f32c088ea1329c29"
+                                      },
+                                      {
+                                          "name":  "02_AI备用_轮廓化描边.jsx",
+                                          "sizeBytes":  5492,
+                                          "sha256":  "f7a7f77855e64f1b8c4a383046eae3935ea10f37d829c41923463de2a4f01d34"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  5541,
+                                          "sha256":  "1427edd167069cd9bbb8447d0005546229ffdf7b13522454470625a1d7e2d3df"
+                                      }
+                                  ],
+                        "sizeBytes":  11287,
+                        "fileCount":  3
+                    },
+                    {
+                        "slug":  "ps-layer-visibility-tools",
+                        "name":  "PS画板对象显示/隔离工具",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-07-23",
+                        "apps":  [
+                                     "Photoshop"
+                                 ],
+                        "category":  "photoshop",
+                        "type":  "JSX 套件",
+                        "status":  "文件级验证，需 Photoshop 实机确认",
+                        "summary":  "用于显示所有对象、只显示选中对象、只显示每画板第一对象等画板整理流程。",
+                        "requirements":  "Photoshop 2020+，含图层或画板结构的 PSD/PSB。",
+                        "install":  "复制需要的 JSX 到 Presets/Scripts，或从 文件 \u003e 脚本 \u003e 浏览 临时运行。",
+                        "notes":  [
+                                      "适合作为商品四件套导出前的图层整理辅助。",
+                                      "包内自动生成简版使用说明。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-layer-visibility-tools/ps-layer-visibility-tools.zip",
+                        "packageName":  "ps-layer-visibility-tools.zip",
+                        "packageSha256":  "f6746bd507406399d4f80df24421ed1f58c3e7fe19ba536dda36323c6eeb529b",
+                        "files":  [
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  519,
+                                          "sha256":  "03835426d1b55e29332f1ce0c49b7fcb03be98682855899252aa428a2cfccb17"
+                                      },
+                                      {
+                                          "name":  "显示所有对象.jsx",
+                                          "sizeBytes":  3605,
+                                          "sha256":  "fcde0b44d0f460b13314d96e301e22e5010b2d5cebeca7c3d8237e26135fe481"
+                                      },
+                                      {
+                                          "name":  "只显示每画板第一对象.jsx",
+                                          "sizeBytes":  6257,
+                                          "sha256":  "432af1ee44ca5daf91075763188290ba6a01bd11806c2f7c0e9a51afb26d9844"
+                                      },
+                                      {
+                                          "name":  "只显示选中对象.jsx",
+                                          "sizeBytes":  9167,
+                                          "sha256":  "9bd656fdb14fd2b80d50b70755666ee8b76e48a3e7a4324fc8bcae3ba4c70aa8"
+                                      }
+                                  ],
+                        "sizeBytes":  6690,
+                        "fileCount":  4
+                    },
+                    {
+                        "slug":  "ps-long-image-performance",
+                        "name":  "PS长图不卡优化助手",
+                        "version":  "2.0.0",
+                        "updatedAt":  "2026-07-23",
+                        "apps":  [
+                                     "Photoshop",
+                                     "Windows"
+                                 ],
+                        "category":  "assistant",
+                        "type":  "EXE + JSX",
+                        "status":  "EXE 烟测和安装验证，Photoshop 实机操作需确认",
+                        "summary":  "扫描多版本 Photoshop 设置并提供长图性能优化、缓存清理和轻量副本辅助。",
+                        "requirements":  "Windows，Photoshop 2020+；部分安装动作需要管理员权限。",
+                        "install":  "运行 EXE 查看环境；如需安装脚本，使用包内 安装到所有PS版本.bat 或 install_all_ps_versions.ps1。",
+                        "notes":  [
+                                      "优化前会备份设置。",
+                                      "不覆盖 PSD，不强制结束 Photoshop，不编辑注册表。"
+                                  ],
+                        "downloadUrl":  "downloads/ps-long-image-performance/ps-long-image-performance.zip",
+                        "packageName":  "ps-long-image-performance.zip",
+                        "packageSha256":  "98f78fb84380a1bf90e20c2a5ca79c345f8355471b2dca5bd2591238d36544f8",
+                        "files":  [
+                                      {
+                                          "name":  "install_all_ps_versions.ps1",
+                                          "sizeBytes":  1189,
+                                          "sha256":  "0e4b722a8246cf35f38bb5a41a652f40fd9f152a40af561e120e7186c85e6817"
+                                      },
+                                      {
+                                          "name":  "PS_LongImage_Performance_Assistant.jsx",
+                                          "sizeBytes":  6648,
+                                          "sha256":  "b8288cbcca79ddb831bd27307e87ccf375e0baa0d1a8d5c1ccddfbbf2b8e2d24"
+                                      },
+                                      {
+                                          "name":  "PS长图不卡优化助手.exe",
+                                          "sizeBytes":  45571360,
+                                          "sha256":  "436c22977f586498309b24a5eb88df586fce6f165ab757cdb7ecd59d70a8f869"
+                                      },
+                                      {
+                                          "name":  "安装到所有PS版本.bat",
+                                          "sizeBytes":  388,
+                                          "sha256":  "84d5cb92b24f5f441b88877c6f2cf35ba30f0dc1457a0337ab3b6dff0d38ce68"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  1949,
+                                          "sha256":  "d6730f2eeb0042979856b87e3cce2673b4c3574094ab8ddf24a917d87d294218"
+                                      }
+                                  ],
+                        "sizeBytes":  45236286,
+                        "fileCount":  5
+                    },
+                    {
+                        "slug":  "ai-auto-cutline",
+                        "name":  "AI自动生成刀线插件",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-07-16",
+                        "apps":  [
+                                     "Illustrator"
+                                 ],
+                        "category":  "illustrator",
+                        "type":  "JSX",
+                        "status":  "文件级整理，需 Illustrator 实机确认",
+                        "summary":  "在 Illustrator 中根据选中对象或图层自动生成 CutContour 刀线。",
+                        "requirements":  "Illustrator 2020-2025，适合透明 PNG、矢量对象或已扩展路径。",
+                        "install":  "文件 \u003e 脚本 \u003e 其它脚本 运行，或复制到 Illustrator Presets/zh_CN/脚本。",
+                        "notes":  [
+                                      "支持外扩/内收、圆角刀线、锚点简化和 CMYK/专色设置。",
+                                      "生产文件需和工厂确认专色名称。"
+                                  ],
+                        "downloadUrl":  "downloads/ai-auto-cutline/ai-auto-cutline.zip",
+                        "packageName":  "ai-auto-cutline.zip",
+                        "packageSha256":  "a5cfa44b361f83395ec74ac7bd23dcc945fac91fe3f0d6a3f4c9a62a8ed9c37d",
+                        "files":  [
+                                      {
+                                          "name":  "AI_自动生成刀线.jsx",
+                                          "sizeBytes":  35822,
+                                          "sha256":  "fd2221a8b4266ab2355d4abc56242f3666d8f2e208dfcb65a51e0c4fb1ae98d4"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  3699,
+                                          "sha256":  "5a64ec64f227d9d1deba4f6312a18e1924f0158aa60dbd9ff24014cd740c253a"
+                                      }
+                                  ],
+                        "sizeBytes":  10084,
+                        "fileCount":  2
+                    },
+                    {
+                        "slug":  "ai-locate-object-hotkey",
+                        "name":  "AI图层定位对象快捷键",
+                        "version":  "1.1.0",
+                        "updatedAt":  "2026-08-05",
+                        "apps":  [
+                                     "Illustrator",
+                                     "Windows"
+                                 ],
+                        "category":  "illustrator",
+                        "type":  "JSX + PowerShell 热键",
+                        "status":  "启动和自测通过，真实点击需用户校准确认",
+                        "summary":  "给 Illustrator 图层面板底部的“定位对象”按钮增加可校准快捷键。",
+                        "requirements":  "Windows + Illustrator；面板位置变化、显示器或缩放变化后需要重新校准。",
+                        "install":  "先运行 JSX 打开图层面板，再双击启动 BAT；鼠标悬停定位对象按钮后按 Ctrl+Alt+~ 校准。",
+                        "notes":  [
+                                      "这是坐标点击辅助，不是 Illustrator 原生命令。",
+                                      "默认 ~ / ` 触发，Ctrl+Alt+Shift+~ 或停止 BAT 退出。"
+                                  ],
+                        "downloadUrl":  "downloads/ai-locate-object-hotkey/ai-locate-object-hotkey.zip",
+                        "packageName":  "ai-locate-object-hotkey.zip",
+                        "packageSha256":  "c8b119d74131a6d53cd8c440dea5e6e3ea8b3c98321d1225d254a904bcb64cf7",
+                        "files":  [
+                                      {
+                                          "name":  "AI_Locate_Object_Hotkey.ps1",
+                                          "sizeBytes":  5611,
+                                          "sha256":  "6df60865d6aeb03dd853b80108e35d55564af726524456378d0f6026ad4f939d"
+                                      },
+                                      {
+                                          "name":  "AI_图层面板定位对象.jsx",
+                                          "sizeBytes":  1288,
+                                          "sha256":  "2f0bbd46aeb124255b0e15ce48cfa5bbfdaa1759c3fa95b0d050f3bafe867b6f"
+                                      },
+                                      {
+                                          "name":  "启动AI定位对象快捷键.bat",
+                                          "sizeBytes":  178,
+                                          "sha256":  "01764f08827021869437453600641e17625a66e4d2b95c8c58b966bffb7396e4"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  1662,
+                                          "sha256":  "287d162d2b1864571a0c47f1e7199fb427546c114492900f0d333aff6e80505d"
+                                      },
+                                      {
+                                          "name":  "停止AI定位对象快捷键.bat",
+                                          "sizeBytes":  271,
+                                          "sha256":  "b8939def373a380e0761d1e5140cc3ecef76551462db740cba6db958860b9144"
+                                      }
+                                  ],
+                        "sizeBytes":  4485,
+                        "fileCount":  5
+                    }
+                ]
+}

@@ -1,0 +1,8 @@
+netlify-token.txt
+github-token.txt
+upload-log.txt
+github-pages-upload-log.txt
+*-netlify-backup-*.zip
+*-github-pages-backup-*.zip
+preview-*.png
+.deploy-temp/
