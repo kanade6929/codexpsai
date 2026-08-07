@@ -105,7 +105,6 @@
     const fileCount = plugin.fileCount ? `${plugin.fileCount} 个文件` : "待生成";
     const files = renderPackageFiles(plugin);
     const downloadUrl = escapeHtml(plugin.downloadUrl || "");
-    const downloadLabel = `下载 ZIP${plugin.sizeBytes ? ` · ${formatSize(plugin.sizeBytes)}` : ""}`;
 
     return `
       <article class="plugin-card glass-panel reveal" data-category="${escapeHtml(plugin.category)}">
@@ -131,9 +130,6 @@
           <div class="details">
             <div class="details-inner">
               <div class="details-inner-content">
-                <div class="details-download-row">
-                  <a class="download-link detail-download" href="${downloadUrl}" download>${downloadLabel}</a>
-                </div>
                 <p><strong>安装：</strong>${escapeHtml(plugin.install)}</p>
                 <p><strong>要求：</strong>${escapeHtml(plugin.requirements)}</p>
                 ${notes ? `<p><strong>注意：</strong></p><ul>${notes}</ul>` : ""}

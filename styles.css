@@ -616,16 +616,6 @@ main {
   padding-top: 14px;
 }
 
-.details-download-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
-.detail-download {
-  min-width: 168px;
-}
-
 .details ul {
   margin: 8px 0 0;
   padding-left: 18px;
