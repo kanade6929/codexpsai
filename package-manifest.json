@@ -46,23 +46,24 @@
     },
     {
       "slug": "ps-existing-slice-export",
-      "name": "PS批量切图导出小助手",
+      "name": "PS批量导出助手",
       "version": "1.0.0",
       "updatedAt": "2026-07-23",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX + 安装脚本",
       "status": "外发包已整理，需 Photoshop 实机确认",
-      "summary": "只导出 Photoshop 已经创建好的切片，不重新按参考线切图。",
-      "requirements": "Photoshop 2020+，PSD/PSB 内已有切片。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
+      "summary": "用于一键导出多个当前打开的 PSD 文档，支持 PNG 和 JPG。",
+      "requirements": "Photoshop 2020+，当前已打开一个或多个 PSD/PSB 文档。",
+      "install": "优先运行包内 一键安装到Photoshop.ps1；也可手动复制 PS批量导出助手.jsx 到 Presets/Scripts。",
       "notes": [
-        "不会把参考线重新切成切片。",
-        "导出失败时应报错，不做逐张复制裁切 fallback。"
+        "可只导出当前文档，也可批量导出当前打开的全部 PSD / PSB 文档。",
+        "PNG 保留透明；JPG 使用白色背景和高质量导出。"
       ],
       "sourceFiles": [
-        "交接文档/ps批量切图导出小助手_外发文件夹/ps批量切图导出小助手.jsx",
-        "交接文档/ps批量切图导出小助手_外发文件夹/使用说明.txt"
+        "交接文档/PS批量导出助手_外发文件夹/PS批量导出助手.jsx",
+        "交接文档/PS批量导出助手_外发文件夹/使用说明.txt",
+        "交接文档/PS批量导出助手_外发文件夹/一键安装到Photoshop.ps1"
       ]
     },
     {

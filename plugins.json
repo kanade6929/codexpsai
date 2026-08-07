@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-07 16:57:30",
+    "generatedAt":  "2026-08-07 17:25:42",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -22,7 +22,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%94%BB%E6%9D%BF%E5%95%86%E5%93%81%E5%9B%9B%E4%BB%B6%E5%A5%97.zip",
                         "packageName":  "PS批量导出画板商品四件套.zip",
-                        "packageSha256":  "4aec1773cff5f4caa0e38730cb5afcab7d5c4650a38abd97d8673feb9c89e3bd",
+                        "packageSha256":  "4f0078efaf266ca6e3c890be847830a7f315d5ad36ca7186d86754cd458538fc",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -68,7 +68,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E4%B8%80%E9%94%AE%E5%B5%8C%E5%85%A5%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI一键嵌入所有链接插件.zip",
-                        "packageSha256":  "1ecfb76202fc732e4eb7dc7a893affad3c5c8b5e7e865b1484afaa63b7f9c192",
+                        "packageSha256":  "da108ad4cd86b445beb56b8e66735925ab2fc630be35ee175d594d17770e91db",
                         "files":  [
                                       {
                                           "name":  "AI_一键嵌入所有链接.jsx",
@@ -91,7 +91,7 @@
                     },
                     {
                         "slug":  "ps-existing-slice-export",
-                        "name":  "PS批量切图导出小助手",
+                        "name":  "PS批量导出助手",
                         "version":  "1.0.0",
                         "updatedAt":  "2026-07-23",
                         "apps":  [
@@ -100,35 +100,40 @@
                         "category":  "photoshop",
                         "type":  "JSX + 安装脚本",
                         "status":  "外发包已整理，需 Photoshop 实机确认",
-                        "summary":  "只导出 Photoshop 已经创建好的切片，不重新按参考线切图。",
-                        "requirements":  "Photoshop 2020+，PSD/PSB 内已有切片。",
-                        "install":  "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 \u003e 脚本 运行。",
+                        "summary":  "用于一键导出多个当前打开的 PSD 文档，支持 PNG 和 JPG。",
+                        "requirements":  "Photoshop 2020+，当前已打开一个或多个 PSD/PSB 文档。",
+                        "install":  "优先运行包内 一键安装到Photoshop.ps1；也可手动复制 PS批量导出助手.jsx 到 Presets/Scripts。",
                         "notes":  [
-                                      "不会把参考线重新切成切片。",
-                                      "导出失败时应报错，不做逐张复制裁切 fallback。"
+                                      "可只导出当前文档，也可批量导出当前打开的全部 PSD / PSB 文档。",
+                                      "PNG 保留透明；JPG 使用白色背景和高质量导出。"
                                   ],
-                        "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%88%87%E5%9B%BE%E5%AF%BC%E5%87%BA%E5%B0%8F%E5%8A%A9%E6%89%8B.zip",
-                        "packageName":  "PS批量切图导出小助手.zip",
-                        "packageSha256":  "6698089a12ef2dc1009de86a4cf931ad4b9d3b229c58a07d631411f73e9dcd92",
+                        "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E5%8A%A9%E6%89%8B.zip",
+                        "packageName":  "PS批量导出助手.zip",
+                        "packageSha256":  "918ebd1bf18ba9aabf584278ed2c48c5c81dd3098c890ab0e22ed7d0101762fd",
                         "files":  [
                                       {
-                                          "name":  "ps批量切图导出小助手.jsx",
-                                          "sizeBytes":  21132,
-                                          "sha256":  "6e44a8432d4bb1ff603b0e7d57c889ca425a2662c1b7f62dffd83258f87a426f"
+                                          "name":  "PS批量导出助手.jsx",
+                                          "sizeBytes":  19659,
+                                          "sha256":  "e596cb8de89128fbd63b774ee5c0bdbe13c2464f24bf965d1551eac06a74c76f"
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  691,
-                                          "sha256":  "e81ee279e81c4f1cbda1f9e2a1f08429f6d52981789bc65b9380746664d8101b"
+                                          "sizeBytes":  1019,
+                                          "sha256":  "6e5d10e95c410d3bd0013d7d59d07c1bda5ee1ac2e5172effff88bba8d70177f"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
                                           "sizeBytes":  1618,
                                           "sha256":  "6dde740c176b3b7ff7f1537929985d9359befc692c89dbc0961ef27cdae7d0bd"
+                                      },
+                                      {
+                                          "name":  "一键安装到Photoshop.ps1",
+                                          "sizeBytes":  1318,
+                                          "sha256":  "53cb231366fbb7efea1b65d9384810acd7a9a7ac1166dfad6d01065aee7d3dd7"
                                       }
                                   ],
-                        "sizeBytes":  6696,
-                        "fileCount":  3
+                        "sizeBytes":  7366,
+                        "fileCount":  4
                     },
                     {
                         "slug":  "ps-guide-slice-export",
@@ -150,7 +155,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-guide-slice-export/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%88%87%E7%89%87%E5%AF%BC%E5%87%BA.zip",
                         "packageName":  "PS参考线切片导出.zip",
-                        "packageSha256":  "cbf75f409a71ffdf139064352a1091f08028609c379213b5de517aa374e2ac4a",
+                        "packageSha256":  "43fa7687ed5eb35efa8fddd842e05221080c38f957f1046a12911baa18b8dca1",
                         "files":  [
                                       {
                                           "name":  "双击一键安装.bat",
@@ -191,7 +196,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-white-ink-layer/PS%E7%99%BD%E5%A2%A8%E5%9B%BE%E5%B1%82%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "PS白墨图层自动生成插件.zip",
-                        "packageSha256":  "8c121468dde434f19a1817aae4fe6b7886ad5485cd29845f72cba71b1fb3c98d",
+                        "packageSha256":  "4f7df1af6aaa02c357db8c2490a074cf67396667cc030b083a4352b864903923",
                         "files":  [
                                       {
                                           "name":  "PS_自动生成白墨图层.jsx",
@@ -233,7 +238,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/PS%E8%BD%AE%E5%BB%93%E5%8C%96%E6%8F%8F%E8%BE%B9%E5%8A%A9%E6%89%8B%20V2.zip",
                         "packageName":  "PS轮廓化描边助手 V2.zip",
-                        "packageSha256":  "1b15f4fd14aae4c99ce30a1ef939a15d8e02e6109ace1b70cd2ce636dcd9f790",
+                        "packageSha256":  "b1618c2c1725f479bcf7ece5936f37cf05dc8af84c90c206a259f7f793884451",
                         "files":  [
                                       {
                                           "name":  "01_PS运行_轮廓化描边助手V2.jsx",
@@ -279,7 +284,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/PS%E7%94%BB%E6%9D%BF%E5%AF%B9%E8%B1%A1%E6%98%BE%E7%A4%BA_%E9%9A%94%E7%A6%BB%E5%B7%A5%E5%85%B7.zip",
                         "packageName":  "PS画板对象显示_隔离工具.zip",
-                        "packageSha256":  "b209fee974debd404a2b1a4496e054e5fb93654ff32ebfb080016c0d329cfd1e",
+                        "packageSha256":  "ab79a51e476dc0647fa6c122de186755a4d4b0a451cbeaaa0cfb0a73b08234a4",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
@@ -331,7 +336,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-long-image-performance/PS%E9%95%BF%E5%9B%BE%E4%B8%8D%E5%8D%A1%E4%BC%98%E5%8C%96%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS长图不卡优化助手.zip",
-                        "packageSha256":  "87c334f38479423c68faf58106f6fc4a8793037c035f7b3532751652e05e45d7",
+                        "packageSha256":  "dcc30d5bff63756e79895594eaae2d469540c5ee49c0308f9955baa639df2243",
                         "files":  [
                                       {
                                           "name":  "PS_LongImage_Performance_Assistant.jsx",
@@ -377,7 +382,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-auto-cutline/AI%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%88%80%E7%BA%BF%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI自动生成刀线插件.zip",
-                        "packageSha256":  "68dda9b811d374ea036e4b601287543aaf4ba1882220841ff154f6939261b647",
+                        "packageSha256":  "8e707a53bfe2f9ac8613690ae82a3752c0d83550a77462ec799cc60bc3d3cb70",
                         "files":  [
                                       {
                                           "name":  "AI_自动生成刀线.jsx",
@@ -419,7 +424,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-locate-object-hotkey/AI%E5%9B%BE%E5%B1%82%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%BF%AB%E6%8D%B7%E9%94%AE.zip",
                         "packageName":  "AI图层定位对象快捷键.zip",
-                        "packageSha256":  "bfcc2aff75a2e1dd4e7b6d7b33ef40837fdc1c632842a3a4da4b10c8439d6ee9",
+                        "packageSha256":  "e469eb3f91a35618e23d92b08ed2188dc5498e7bd647d5f6ce9505025e2953fd",
                         "files":  [
                                       {
                                           "name":  "AI_Locate_Object_Hotkey.ps1",
