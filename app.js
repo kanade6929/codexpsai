@@ -1,4 +1,13 @@
 (function () {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+    window.addEventListener("load", () => window.scrollTo(0, 0), { once: true });
+  }
+
   const state = {
     plugins: [],
     filter: "all",
