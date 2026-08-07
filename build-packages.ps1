@@ -11,6 +11,8 @@ $pluginsPath = Join-Path $siteRoot "plugins.json"
 $downloadsDir = Join-Path $siteRoot "downloads"
 $usageStem = -join ([char[]](20351, 29992, 35828, 26126))
 $usageFileName = $usageStem + ".txt"
+$installerStem = -join ([char[]](21452, 20987, 19968, 38190, 23433, 35013))
+$installerFileName = $installerStem + ".bat"
 
 function Write-Step([string]$message) {
   Write-Host ""
@@ -94,6 +96,107 @@ $notes
   Set-Content -LiteralPath $path -Value $text -Encoding UTF8
 }
 
+function Test-PluginApp($plugin, [string]$appName) {
+  foreach ($app in @($plugin.apps)) {
+    if ($app -eq $appName) {
+      return $true
+    }
+  }
+  return $false
+}
+
+function Write-GeneratedInstallerBat($plugin, [string]$path) {
+  $installPhotoshop = Test-PluginApp $plugin "Photoshop"
+  $installIllustrator = Test-PluginApp $plugin "Illustrator"
+
+  if ($installPhotoshop -and $installIllustrator) {
+    $installLine = 'call :installByName "%%~fJ" "%%~nxJ"'
+  }
+  elseif ($installPhotoshop) {
+    $installLine = 'call :copyPhotoshop "%%~fJ" "%%~nxJ"'
+  }
+  elseif ($installIllustrator) {
+    $installLine = 'call :copyIllustrator "%%~fJ" "%%~nxJ"'
+  }
+  else {
+    $installLine = 'echo No supported Adobe host app was configured.'
+  }
+
+  $bat = @"
+@echo off
+setlocal EnableExtensions
+pushd "%~dp0"
+
+net session >nul 2>&1
+if not "%errorlevel%"=="0" (
+  echo Requesting administrator permission...
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -FilePath '%~f0' -Verb RunAs -WorkingDirectory '%~dp0'"
+  exit /b
+)
+
+set "FOUND=0"
+
+for %%J in (*.jsx) do (
+  $installLine
+)
+
+if "%FOUND%"=="0" (
+  echo No Photoshop or Illustrator script folder was found.
+  echo Please confirm Adobe is installed under C:\Program Files\Adobe.
+)
+
+echo.
+pause
+exit /b
+
+:installByName
+set "FILE_NAME=%~2"
+echo %FILE_NAME% | findstr /i "ai_ ai- 02_ai _ai illustrator" >nul
+if "%errorlevel%"=="0" (
+  call :copyIllustrator "%~1" "%~2"
+  exit /b
+)
+
+echo %FILE_NAME% | findstr /i "ps_ ps- 01_ps _ps photoshop" >nul
+if "%errorlevel%"=="0" (
+  call :copyPhotoshop "%~1" "%~2"
+  exit /b
+)
+
+call :copyPhotoshop "%~1" "%~2"
+call :copyIllustrator "%~1" "%~2"
+exit /b
+
+:copyPhotoshop
+for /d %%D in ("%ProgramFiles%\Adobe\Adobe Photoshop*") do (
+  if exist "%%~fD\Presets\Scripts\" (
+    copy /y "%~1" "%%~fD\Presets\Scripts\%~2" >nul
+    echo Installed [Photoshop] %%~nxD\Presets\Scripts\%~2
+    set "FOUND=1"
+  )
+)
+exit /b
+
+:copyIllustrator
+for /d %%D in ("%ProgramFiles%\Adobe\Adobe Illustrator*") do (
+  set "COPIED_AI_DIR="
+  if exist "%%~fD\Presets\" (
+    for /f "delims=" %%F in ('dir /b /s /a-d "%%~fD\Presets\*.jsx" 2^>nul') do (
+      if not defined COPIED_AI_DIR (
+        copy /y "%~1" "%%~dpF%~2" >nul
+        echo Installed [Illustrator] %%~nxD %%~dpF%~2
+        set "FOUND=1"
+        set "COPIED_AI_DIR=1"
+      )
+    )
+  )
+)
+exit /b
+"@
+
+  Set-Content -LiteralPath $path -Value $bat -Encoding ASCII
+}
+
 function ConvertTo-UrlSegment([string]$value) {
   return [Uri]::EscapeDataString($value)
 }
@@ -157,6 +260,12 @@ try {
     }
     if ($usageFiles.Count -eq 0) {
       Write-GeneratedUsage $plugin (Join-Path $stageDir $usageFileName)
+    }
+
+    $hasInstallableJsx = (Get-ChildItem -LiteralPath $stageDir -File -Filter "*.jsx" -ErrorAction SilentlyContinue | Measure-Object).Count -gt 0
+    $hasInstallableApp = (Test-PluginApp $plugin "Photoshop") -or (Test-PluginApp $plugin "Illustrator")
+    if ($hasInstallableJsx -and $hasInstallableApp) {
+      Write-GeneratedInstallerBat $plugin (Join-Path $stageDir $installerFileName)
     }
 
     $publicFiles = @()

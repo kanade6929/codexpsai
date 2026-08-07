@@ -13,7 +13,7 @@
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "按可见画板批量生成商品主图、白底图、透明 PNG 和调整 PSD。",
       "requirements": "Photoshop 2020-2025，含画板的 PSD/PSB 文件。",
-      "install": "把 JSX 放入 Photoshop 的 Presets/Scripts，重启后从 文件 > 脚本 运行；也可用 文件 > 脚本 > 浏览 临时运行。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "适合周边商品图批量导出。",
         "已同步过工作区和交接包，实机导出仍建议用小文件复测。"
@@ -34,14 +34,13 @@
       "status": "文件级整理，需 Illustrator 实机确认",
       "summary": "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性嵌入，适合发工厂前整理文件。",
       "requirements": "Illustrator 2020-2025，当前文件包含外部链接对象。",
-      "install": "优先运行包内 一键安装到Illustrator.ps1；也可手动复制 JSX 到 Illustrator Presets/zh_CN/脚本。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 > 脚本 运行。",
       "notes": [
         "建议先另存副本，再执行一键嵌入。",
         "缺失链接需要先重新链接后再运行。"
       ],
       "sourceFiles": [
         "周边/AI一键嵌入所有链接插件/AI_一键嵌入所有链接.jsx",
-        "周边/AI一键嵌入所有链接插件/一键安装到Illustrator.ps1",
         "周边/AI一键嵌入所有链接插件/使用说明.txt"
       ]
     },
@@ -56,15 +55,14 @@
       "status": "外发包已整理，需 Photoshop 实机确认",
       "summary": "只导出 Photoshop 已经创建好的切片，不重新按参考线切图。",
       "requirements": "Photoshop 2020+，PSD/PSB 内已有切片。",
-      "install": "优先运行包内 一键安装到Photoshop.ps1；也可手动复制 JSX 到 Presets/Scripts。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "不会把参考线重新切成切片。",
         "导出失败时应报错，不做逐张复制裁切 fallback。"
       ],
       "sourceFiles": [
         "交接文档/ps批量切图导出小助手_外发文件夹/ps批量切图导出小助手.jsx",
-        "交接文档/ps批量切图导出小助手_外发文件夹/使用说明.txt",
-        "交接文档/ps批量切图导出小助手_外发文件夹/一键安装到Photoshop.ps1"
+        "交接文档/ps批量切图导出小助手_外发文件夹/使用说明.txt"
       ]
     },
     {
@@ -78,7 +76,7 @@
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "按画布边缘和水平/垂直参考线生成切片，并选择 PNG/JPG 输出。",
       "requirements": "Photoshop 2020+，当前文档已有参考线。",
-      "install": "文件 > 脚本 > 浏览 运行，或复制到 Presets/Scripts 后从脚本菜单运行。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "PNG 保留透明，JPG 使用白底并以高质量输出。",
         "这是参考线派生切片工具，不等同于现有切片导出工具。"
@@ -99,7 +97,7 @@
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "根据当前选中图层或图层组的非透明区域生成白墨底版图层。",
       "requirements": "Photoshop 2020+，适合透明贴纸、亚克力、UV 打印等文件。",
-      "install": "文件 > 脚本 > 浏览 运行，或复制到 Presets/Scripts 后从脚本菜单运行。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "生产交付默认填充纯黑，浅蓝色只作为检查色。",
         "生成结果是普通图层，不是专色通道。"
@@ -120,7 +118,7 @@
       "status": "V2 主推版，需 PS/AI 实机确认",
       "summary": "把 Photoshop 形状描边转成真实矢量轮廓，适合烫金、光油、刀线和专色版。",
       "requirements": "Photoshop + Illustrator，建议先手动打开 Illustrator。",
-      "install": "在 Photoshop 运行 01_PS 脚本；若自动联动失败，再在 Illustrator 运行 02_AI 备用脚本。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop / Illustrator。优先从 Photoshop 的 文件 > 脚本 运行 01_PS 脚本，联动失败再在 Illustrator 运行 02_AI 备用脚本。",
       "notes": [
         "旧测试版不放入主下载卡片。",
         "位图描摹是测试功能，正式交付前需要人工检查路径。"
@@ -142,7 +140,7 @@
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "用于显示所有对象、只显示选中对象、只显示每画板第一对象等画板整理流程。",
       "requirements": "Photoshop 2020+，含图层或画板结构的 PSD/PSB。",
-      "install": "复制需要的 JSX 到 Presets/Scripts，或从 文件 > 脚本 > 浏览 临时运行。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行需要的工具。",
       "notes": [
         "适合作为商品四件套导出前的图层整理辅助。",
         "包内自动生成简版使用说明。"
@@ -164,7 +162,7 @@
       "status": "EXE 烟测和安装验证，Photoshop 实机操作需确认",
       "summary": "扫描多版本 Photoshop 设置并提供长图性能优化、缓存清理和轻量副本辅助。",
       "requirements": "Windows，Photoshop 2020+；部分安装动作需要管理员权限。",
-      "install": "运行 EXE 查看环境；如需安装脚本，使用包内 安装到所有PS版本.bat 或 install_all_ps_versions.ps1。",
+      "install": "运行 EXE 查看环境；如需安装 JSX 菜单脚本，下载解压后双击包内 双击一键安装.bat，安装成功后重启 Photoshop。",
       "notes": [
         "优化前会备份设置。",
         "不覆盖 PSD，不强制结束 Photoshop，不编辑注册表。"
@@ -172,8 +170,6 @@
       "sourceFiles": [
         "周边/PS长图不卡优化助手/PS长图不卡优化助手.exe",
         "周边/PS长图不卡优化助手/PS_LongImage_Performance_Assistant.jsx",
-        "周边/PS长图不卡优化助手/install_all_ps_versions.ps1",
-        "周边/PS长图不卡优化助手/安装到所有PS版本.bat",
         "周边/PS长图不卡优化助手/使用说明.txt"
       ]
     },
@@ -188,7 +184,7 @@
       "status": "文件级整理，需 Illustrator 实机确认",
       "summary": "在 Illustrator 中根据选中对象或图层自动生成 CutContour 刀线。",
       "requirements": "Illustrator 2020-2025，适合透明 PNG、矢量对象或已扩展路径。",
-      "install": "文件 > 脚本 > 其它脚本 运行，或复制到 Illustrator Presets/zh_CN/脚本。",
+      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 > 脚本 运行。",
       "notes": [
         "支持外扩/内收、圆角刀线、锚点简化和 CMYK/专色设置。",
         "生产文件需和工厂确认专色名称。"
@@ -209,7 +205,7 @@
       "status": "启动和自测通过，真实点击需用户校准确认",
       "summary": "给 Illustrator 图层面板底部的“定位对象”按钮增加可校准快捷键。",
       "requirements": "Windows + Illustrator；面板位置变化、显示器或缩放变化后需要重新校准。",
-      "install": "先运行 JSX 打开图层面板，再双击启动 BAT；鼠标悬停定位对象按钮后按 Ctrl+Alt+~ 校准。",
+      "install": "先双击包内 双击一键安装.bat 安装 JSX 菜单脚本；重启 Illustrator 后从 文件 > 脚本 打开图层面板，再双击启动 BAT。鼠标悬停定位对象按钮后按 Ctrl+Alt+~ 校准。",
       "notes": [
         "这是坐标点击辅助，不是 Illustrator 原生命令。",
         "默认 ~ / ` 触发，Ctrl+Alt+Shift+~ 或停止 BAT 退出。"
