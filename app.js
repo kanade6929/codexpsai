@@ -16,7 +16,10 @@
   const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
   const manifestButtons = Array.from(document.querySelectorAll("[data-open-manifest]"));
   const manifestCloseButtons = Array.from(document.querySelectorAll("[data-close-manifest]"));
+  const contactButtons = Array.from(document.querySelectorAll("[data-open-contact]"));
+  const contactCloseButtons = Array.from(document.querySelectorAll("[data-close-contact]"));
   const manifestDialog = document.getElementById("manifestDialog");
+  const contactDialog = document.getElementById("contactDialog");
   const manifestSummary = document.getElementById("manifestSummary");
   const manifestList = document.getElementById("manifestList");
   const totalCount = document.getElementById("totalCount");
@@ -94,6 +97,27 @@
     document.body.classList.remove("is-dialog-open");
   }
 
+  function openContact() {
+    if (!contactDialog) return;
+    if (contactDialog.open) return;
+    if (typeof contactDialog.showModal === "function") {
+      contactDialog.showModal();
+    } else {
+      contactDialog.setAttribute("open", "");
+    }
+    document.body.classList.add("is-dialog-open");
+  }
+
+  function closeContact() {
+    if (!contactDialog) return;
+    if (typeof contactDialog.close === "function") {
+      contactDialog.close();
+    } else {
+      contactDialog.removeAttribute("open");
+    }
+    document.body.classList.remove("is-dialog-open");
+  }
+
   function renderPackageFiles(plugin) {
     return (plugin.files || []).map((file) => `
       <div class="file-item">
@@ -111,6 +135,9 @@
     const isUntested = untestedSlugs.has(plugin.slug);
     const statusTag = isUntested ? `<span class="tag tag-status-untested">未测试</span>` : "";
     const testState = isUntested ? "untested" : "checked";
+    const tutorialLink = plugin.slug === "ps-artboard-four-piece"
+      ? `<a class="details-button tutorial-link" href="https://kurogame.feishu.cn/docx/GSMKdlfqdo3os3xjr68cmE9NndQ" target="_blank" rel="noopener noreferrer">教程文档</a>`
+      : "";
 
     return `
       <article class="plugin-card glass-panel reveal" data-category="${escapeHtml(plugin.category)}" data-test-state="${testState}">
@@ -131,6 +158,7 @@
           <div class="card-actions">
             <a class="download-link" href="${downloadUrl}" download>下载 ZIP</a>
             <button class="details-button" type="button">详情</button>
+            ${tutorialLink}
           </div>
           <div class="details">
             <div class="details-inner">
@@ -254,12 +282,30 @@
     button.addEventListener("click", closeManifest);
   });
 
+  contactButtons.forEach((button) => {
+    button.addEventListener("click", openContact);
+  });
+
+  contactCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeContact);
+  });
+
   if (manifestDialog) {
     manifestDialog.addEventListener("click", (event) => {
       if (event.target === manifestDialog) closeManifest();
     });
 
     manifestDialog.addEventListener("close", () => {
+      document.body.classList.remove("is-dialog-open");
+    });
+  }
+
+  if (contactDialog) {
+    contactDialog.addEventListener("click", (event) => {
+      if (event.target === contactDialog) closeContact();
+    });
+
+    contactDialog.addEventListener("close", () => {
       document.body.classList.remove("is-dialog-open");
     });
   }

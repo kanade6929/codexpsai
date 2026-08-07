@@ -24,6 +24,28 @@
       ]
     },
     {
+      "slug": "ai-embed-all-links",
+      "name": "AI一键嵌入所有链接插件",
+      "version": "1.0.0",
+      "updatedAt": "2026-08-07",
+      "apps": ["Illustrator"],
+      "category": "illustrator",
+      "type": "JSX + 安装脚本",
+      "status": "文件级整理，需 Illustrator 实机确认",
+      "summary": "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性嵌入，适合发工厂前整理文件。",
+      "requirements": "Illustrator 2020-2025，当前文件包含外部链接对象。",
+      "install": "优先运行包内 一键安装到Illustrator.ps1；也可手动复制 JSX 到 Illustrator Presets/zh_CN/脚本。",
+      "notes": [
+        "建议先另存副本，再执行一键嵌入。",
+        "缺失链接需要先重新链接后再运行。"
+      ],
+      "sourceFiles": [
+        "周边/AI一键嵌入所有链接插件/AI_一键嵌入所有链接.jsx",
+        "周边/AI一键嵌入所有链接插件/一键安装到Illustrator.ps1",
+        "周边/AI一键嵌入所有链接插件/使用说明.txt"
+      ]
+    },
+    {
       "slug": "ps-existing-slice-export",
       "name": "PS批量切图导出小助手",
       "version": "1.0.0",

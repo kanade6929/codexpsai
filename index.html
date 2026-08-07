@@ -37,6 +37,7 @@
         <div class="header-actions">
           <a class="primary-link magnetic" href="#plugins">查看插件</a>
           <button class="secondary-link manifest-trigger" type="button" data-open-manifest>查看清单</button>
+          <button class="secondary-link contact-trigger" type="button" data-open-contact>联系作者</button>
         </div>
       </div>
 
@@ -115,6 +116,26 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260807-card-meta-lite"></script>
+  <dialog class="manifest-dialog contact-dialog" id="contactDialog" aria-labelledby="contactTitle">
+    <div class="manifest-panel contact-panel glass-panel">
+      <div class="manifest-head">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contactTitle">联系作者</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-contact aria-label="关闭联系作者">×</button>
+      </div>
+      <div class="contact-content">
+        <p><strong>插件和网站制作者：周上杰</strong></p>
+        <p>脚本为作者使用 Codex 自制并调试，如有疑问和 BUG 或者优化反馈，欢迎飞书小窗联系。</p>
+        <p class="contact-wechat"><span>微信</span><strong>zsj692938</strong></p>
+      </div>
+      <div class="manifest-foot">
+        <button class="download-link" type="button" data-close-contact>完成</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js?v=20260807-tutorial-link"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 ﻿{
-    "generatedAt":  "2026-08-07 14:37:29",
-    "pluginCount":  9,
+    "generatedAt":  "2026-08-07 16:14:40",
+    "pluginCount":  10,
     "plugins":  [
                     {
                         "slug":  "ps-artboard-four-piece",
@@ -22,7 +22,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/ps-artboard-four-piece.zip",
                         "packageName":  "ps-artboard-four-piece.zip",
-                        "packageSha256":  "3aee9f5a4beb2bb8df2659c0b2c47e0f582dbdd4bdc1d83eebb0d657e3a3e610",
+                        "packageSha256":  "6aa76adc08c9c330990b7668c634b32fa276ae694aeb87233a17b5887b83ec0d",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -41,6 +41,47 @@
                                       }
                                   ],
                         "sizeBytes":  779414,
+                        "fileCount":  3
+                    },
+                    {
+                        "slug":  "ai-embed-all-links",
+                        "name":  "AI一键嵌入所有链接插件",
+                        "version":  "1.0.0",
+                        "updatedAt":  "2026-08-07",
+                        "apps":  [
+                                     "Illustrator"
+                                 ],
+                        "category":  "illustrator",
+                        "type":  "JSX + 安装脚本",
+                        "status":  "文件级整理，需 Illustrator 实机确认",
+                        "summary":  "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性嵌入，适合发工厂前整理文件。",
+                        "requirements":  "Illustrator 2020-2025，当前文件包含外部链接对象。",
+                        "install":  "优先运行包内 一键安装到Illustrator.ps1；也可手动复制 JSX 到 Illustrator Presets/zh_CN/脚本。",
+                        "notes":  [
+                                      "建议先另存副本，再执行一键嵌入。",
+                                      "缺失链接需要先重新链接后再运行。"
+                                  ],
+                        "downloadUrl":  "downloads/ai-embed-all-links/ai-embed-all-links.zip",
+                        "packageName":  "ai-embed-all-links.zip",
+                        "packageSha256":  "f7c7af6ac8be46785ecdb122f1ed30fdedce7a3c251b8e5d33ac07ffbe43b09e",
+                        "files":  [
+                                      {
+                                          "name":  "AI_一键嵌入所有链接.jsx",
+                                          "sizeBytes":  2964,
+                                          "sha256":  "4db8f95ede5ae923d1c018bedb815b30e71f76193b048f36bacd92c75d73b604"
+                                      },
+                                      {
+                                          "name":  "使用说明.txt",
+                                          "sizeBytes":  1042,
+                                          "sha256":  "b21d7e15a1aaa6124755d1838abd0f2f89b7abeea8086c9852d3e31ba41a8b95"
+                                      },
+                                      {
+                                          "name":  "一键安装到Illustrator.ps1",
+                                          "sizeBytes":  1213,
+                                          "sha256":  "e6ad781e619d92fe4bcb326af7f67a3cd24a28048c85206a94bf15cd72caa445"
+                                      }
+                                  ],
+                        "sizeBytes":  2677,
                         "fileCount":  3
                     },
                     {
@@ -218,7 +259,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/ps-layer-visibility-tools.zip",
                         "packageName":  "ps-layer-visibility-tools.zip",
-                        "packageSha256":  "c24668740fdbc6e605a834c9d21c70011a86baad9dc16126d647c22cf94d3c09",
+                        "packageSha256":  "9b5598e5207a7f6371e88c6e45672f8c34c6b8821d0df8f5c6d81fcec6a1d77d",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
