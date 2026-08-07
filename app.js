@@ -64,8 +64,6 @@
             <div class="manifest-meta">
               <span>${escapeHtml(apps)}</span>
               <span>v${escapeHtml(plugin.version)}</span>
-              <span>${formatSize(plugin.sizeBytes)}</span>
-              <span>${escapeHtml(plugin.status)}</span>
             </div>
           </div>
           <a class="download-link manifest-download" href="${escapeHtml(plugin.downloadUrl)}" download>下载 ZIP</a>
@@ -108,7 +106,6 @@
   function renderCard(plugin) {
     const notes = (plugin.notes || []).map((note) => `<li>${escapeHtml(note)}</li>`).join("");
     const apps = (plugin.apps || []).map((app) => `<span class="tag">${escapeHtml(app)}</span>`).join("");
-    const fileCount = plugin.fileCount ? `${plugin.fileCount} 个文件` : "待生成";
     const files = renderPackageFiles(plugin);
     const downloadUrl = escapeHtml(plugin.downloadUrl || "");
     const isUntested = untestedSlugs.has(plugin.slug);
@@ -130,8 +127,6 @@
           <ul class="meta-list">
             <li><span>版本</span><strong>${escapeHtml(plugin.version)}</strong></li>
             <li><span>更新</span><strong>${escapeHtml(plugin.updatedAt)}</strong></li>
-            <li><span>状态</span><strong>${escapeHtml(plugin.status)}</strong></li>
-            <li><span>ZIP</span><strong>${formatSize(plugin.sizeBytes)} / ${escapeHtml(fileCount)}</strong></li>
           </ul>
           <div class="card-actions">
             <a class="download-link" href="${downloadUrl}" download>下载 ZIP</a>
@@ -204,19 +199,21 @@
   function setupMagneticHover() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
+    const selector = ".primary-link, .download-link";
 
     document.addEventListener("pointermove", (event) => {
-      const target = event.target.closest(".magnetic");
+      const target = event.target.closest(selector);
       if (!target) return;
       const rect = target.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
       const y = ((event.clientY - rect.top) / rect.height - 0.5) * 8;
-      target.style.transform = `translate(${x}px, ${y - 2}px)`;
+      target.style.transform = `translate3d(${x}px, ${y - 3}px, 0)`;
     });
 
     document.addEventListener("pointerout", (event) => {
-      const target = event.target.closest(".magnetic");
+      const target = event.target.closest(selector);
       if (!target) return;
+      if (event.relatedTarget && target.contains(event.relatedTarget)) return;
       target.style.transform = "";
     });
   }

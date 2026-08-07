@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-07 12:54:53",
+    "generatedAt":  "2026-08-07 14:37:29",
     "pluginCount":  9,
     "plugins":  [
                     {
@@ -22,7 +22,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/ps-artboard-four-piece.zip",
                         "packageName":  "ps-artboard-four-piece.zip",
-                        "packageSha256":  "3e36cd13ac9dd4d62c0057c8a1d83347b9392f77afc5a923478dc2f46a7ac202",
+                        "packageSha256":  "3aee9f5a4beb2bb8df2659c0b2c47e0f582dbdd4bdc1d83eebb0d657e3a3e610",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -218,7 +218,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/ps-layer-visibility-tools.zip",
                         "packageName":  "ps-layer-visibility-tools.zip",
-                        "packageSha256":  "11dbf6d1eab3fae9e046373b4cdb127007a88e1655e1a532e3f0a7e88e5b56f4",
+                        "packageSha256":  "c24668740fdbc6e605a834c9d21c70011a86baad9dc16126d647c22cf94d3c09",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
