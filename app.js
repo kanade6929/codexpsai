@@ -5,6 +5,12 @@
     generatedAt: ""
   };
 
+  const untestedSlugs = new Set([
+    "ps-white-ink-layer",
+    "ai-locate-object-hotkey",
+    "ai-auto-cutline"
+  ]);
+
   const grid = document.getElementById("plugins");
   const emptyState = document.getElementById("emptyState");
   const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
@@ -105,15 +111,19 @@
     const fileCount = plugin.fileCount ? `${plugin.fileCount} 个文件` : "待生成";
     const files = renderPackageFiles(plugin);
     const downloadUrl = escapeHtml(plugin.downloadUrl || "");
+    const isUntested = untestedSlugs.has(plugin.slug);
+    const statusTag = isUntested ? `<span class="tag tag-status-untested">未测试</span>` : "";
+    const testState = isUntested ? "untested" : "checked";
 
     return `
-      <article class="plugin-card glass-panel reveal" data-category="${escapeHtml(plugin.category)}">
+      <article class="plugin-card glass-panel reveal" data-category="${escapeHtml(plugin.category)}" data-test-state="${testState}">
         <div class="card-band" aria-hidden="true"></div>
         <div class="card-body">
           <div class="tag-row">
             <span class="tag">${categoryName(plugin.category)}</span>
             ${apps}
             <span class="tag">${escapeHtml(plugin.type)}</span>
+            ${statusTag}
           </div>
           <h2>${escapeHtml(plugin.name)}</h2>
           <p class="summary">${escapeHtml(plugin.summary)}</p>
@@ -148,6 +158,13 @@
     return categoryOk;
   }
 
+  function sortByTestState(a, b) {
+    const aUntested = untestedSlugs.has(a.slug);
+    const bUntested = untestedSlugs.has(b.slug);
+    if (aUntested === bUntested) return 0;
+    return aUntested ? 1 : -1;
+  }
+
   function observeReveals(scope) {
     const items = Array.from((scope || document).querySelectorAll(".reveal:not(.is-visible)"));
     if (!("IntersectionObserver" in window)) {
@@ -177,7 +194,7 @@
   }
 
   function render() {
-    const visible = state.plugins.filter(matches);
+    const visible = state.plugins.filter(matches).sort(sortByTestState);
     grid.innerHTML = visible.map(renderCard).join("");
     emptyState.hidden = visible.length > 0;
     attachCardEvents();
