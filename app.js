@@ -53,6 +53,10 @@
     return names[category] || category;
   }
 
+  function downloadFileName(plugin) {
+    return plugin.packageName || `${plugin.name || plugin.slug || "plugin"}.zip`;
+  }
+
   function renderManifest() {
     const packageTotal = state.plugins.filter((plugin) => plugin.downloadUrl).length;
     manifestSummary.textContent = `${state.plugins.length} 个工具 · ${packageTotal} 个 ZIP · 更新于 ${state.generatedAt || "待生成"}`;
@@ -69,7 +73,7 @@
               <span>v${escapeHtml(plugin.version)}</span>
             </div>
           </div>
-          <a class="download-link manifest-download" href="${escapeHtml(plugin.downloadUrl)}" download>下载 ZIP</a>
+          <a class="download-link manifest-download" href="${escapeHtml(plugin.downloadUrl)}" download="${escapeHtml(downloadFileName(plugin))}">下载 ZIP</a>
         </article>
       `;
     }).join("");
@@ -132,6 +136,7 @@
     const apps = (plugin.apps || []).map((app) => `<span class="tag">${escapeHtml(app)}</span>`).join("");
     const files = renderPackageFiles(plugin);
     const downloadUrl = escapeHtml(plugin.downloadUrl || "");
+    const downloadName = escapeHtml(downloadFileName(plugin));
     const isUntested = untestedSlugs.has(plugin.slug);
     const statusTag = isUntested ? `<span class="tag tag-status-untested">未测试</span>` : "";
     const testState = isUntested ? "untested" : "checked";
@@ -156,7 +161,7 @@
             <li><span>更新</span><strong>${escapeHtml(plugin.updatedAt)}</strong></li>
           </ul>
           <div class="card-actions">
-            <a class="download-link" href="${downloadUrl}" download>下载 ZIP</a>
+            <a class="download-link" href="${downloadUrl}" download="${downloadName}">下载 ZIP</a>
             <button class="details-button" type="button">详情</button>
             ${tutorialLink}
           </div>

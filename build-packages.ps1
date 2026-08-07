@@ -98,6 +98,18 @@ function ConvertTo-UrlSegment([string]$value) {
   return [Uri]::EscapeDataString($value)
 }
 
+function Get-SafeFileName([string]$value) {
+  $name = if ([string]::IsNullOrWhiteSpace($value)) { "plugin" } else { $value.Trim() }
+  foreach ($char in [IO.Path]::GetInvalidFileNameChars()) {
+    $name = $name.Replace([string]$char, "_")
+  }
+  $name = $name.Trim(" ", ".")
+  if ([string]::IsNullOrWhiteSpace($name)) {
+    return "plugin"
+  }
+  return $name
+}
+
 Write-Step "Read package manifest"
 if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
   throw "Missing package manifest: $manifestPath"
@@ -162,7 +174,7 @@ try {
       throw ("No public files were generated for " + $plugin.slug)
     }
 
-    $zipName = $plugin.slug + ".zip"
+    $zipName = (Get-SafeFileName $plugin.name) + ".zip"
     $zipPath = Join-Path $packageDir $zipName
     New-ZipFromDirectory $stageDir $zipPath
     $zipItem = Get-Item -LiteralPath $zipPath

@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-07 16:14:40",
+    "generatedAt":  "2026-08-07 16:21:59",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -20,9 +20,9 @@
                                       "适合周边商品图批量导出。",
                                       "已同步过工作区和交接包，实机导出仍建议用小文件复测。"
                                   ],
-                        "downloadUrl":  "downloads/ps-artboard-four-piece/ps-artboard-four-piece.zip",
-                        "packageName":  "ps-artboard-four-piece.zip",
-                        "packageSha256":  "6aa76adc08c9c330990b7668c634b32fa276ae694aeb87233a17b5887b83ec0d",
+                        "downloadUrl":  "downloads/ps-artboard-four-piece/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%94%BB%E6%9D%BF%E5%95%86%E5%93%81%E5%9B%9B%E4%BB%B6%E5%A5%97.zip",
+                        "packageName":  "PS批量导出画板商品四件套.zip",
+                        "packageSha256":  "6936c42b048d44bcf793e7bee70dcc7ee0769af23b683b72ad496b054324f2f4",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -61,8 +61,8 @@
                                       "建议先另存副本，再执行一键嵌入。",
                                       "缺失链接需要先重新链接后再运行。"
                                   ],
-                        "downloadUrl":  "downloads/ai-embed-all-links/ai-embed-all-links.zip",
-                        "packageName":  "ai-embed-all-links.zip",
+                        "downloadUrl":  "downloads/ai-embed-all-links/AI%E4%B8%80%E9%94%AE%E5%B5%8C%E5%85%A5%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%E6%8F%92%E4%BB%B6.zip",
+                        "packageName":  "AI一键嵌入所有链接插件.zip",
                         "packageSha256":  "f7c7af6ac8be46785ecdb122f1ed30fdedce7a3c251b8e5d33ac07ffbe43b09e",
                         "files":  [
                                       {
@@ -102,8 +102,8 @@
                                       "不会把参考线重新切成切片。",
                                       "导出失败时应报错，不做逐张复制裁切 fallback。"
                                   ],
-                        "downloadUrl":  "downloads/ps-existing-slice-export/ps-existing-slice-export.zip",
-                        "packageName":  "ps-existing-slice-export.zip",
+                        "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%88%87%E5%9B%BE%E5%AF%BC%E5%87%BA%E5%B0%8F%E5%8A%A9%E6%89%8B.zip",
+                        "packageName":  "PS批量切图导出小助手.zip",
                         "packageSha256":  "24a0dad5116d53602ba1855a5f9fd3199b029aeb5c4cd83d395fa124cc78da3c",
                         "files":  [
                                       {
@@ -143,8 +143,8 @@
                                       "PNG 保留透明，JPG 使用白底并以高质量输出。",
                                       "这是参考线派生切片工具，不等同于现有切片导出工具。"
                                   ],
-                        "downloadUrl":  "downloads/ps-guide-slice-export/ps-guide-slice-export.zip",
-                        "packageName":  "ps-guide-slice-export.zip",
+                        "downloadUrl":  "downloads/ps-guide-slice-export/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%88%87%E7%89%87%E5%AF%BC%E5%87%BA.zip",
+                        "packageName":  "PS参考线切片导出.zip",
                         "packageSha256":  "cd5575fd642d58222552d79769b56e18ceb0ba3e12c9aa5020eb0d9dcacf8d48",
                         "files":  [
                                       {
@@ -179,8 +179,8 @@
                                       "生产交付默认填充纯黑，浅蓝色只作为检查色。",
                                       "生成结果是普通图层，不是专色通道。"
                                   ],
-                        "downloadUrl":  "downloads/ps-white-ink-layer/ps-white-ink-layer.zip",
-                        "packageName":  "ps-white-ink-layer.zip",
+                        "downloadUrl":  "downloads/ps-white-ink-layer/PS%E7%99%BD%E5%A2%A8%E5%9B%BE%E5%B1%82%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6.zip",
+                        "packageName":  "PS白墨图层自动生成插件.zip",
                         "packageSha256":  "f0a8c8d3ab4a486d77361994bf0d0449030a769a2540db42e50602bf7f36a828",
                         "files":  [
                                       {
@@ -216,8 +216,8 @@
                                       "旧测试版不放入主下载卡片。",
                                       "位图描摹是测试功能，正式交付前需要人工检查路径。"
                                   ],
-                        "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/ps-ai-outline-stroke-v2.zip",
-                        "packageName":  "ps-ai-outline-stroke-v2.zip",
+                        "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/PS%E8%BD%AE%E5%BB%93%E5%8C%96%E6%8F%8F%E8%BE%B9%E5%8A%A9%E6%89%8B%20V2.zip",
+                        "packageName":  "PS轮廓化描边助手 V2.zip",
                         "packageSha256":  "a4da5eac546caf9a84b5ec1cfb2f959b8c5cb34e5ae331a2b7fccdd713fb7666",
                         "files":  [
                                       {
@@ -257,9 +257,9 @@
                                       "适合作为商品四件套导出前的图层整理辅助。",
                                       "包内自动生成简版使用说明。"
                                   ],
-                        "downloadUrl":  "downloads/ps-layer-visibility-tools/ps-layer-visibility-tools.zip",
-                        "packageName":  "ps-layer-visibility-tools.zip",
-                        "packageSha256":  "9b5598e5207a7f6371e88c6e45672f8c34c6b8821d0df8f5c6d81fcec6a1d77d",
+                        "downloadUrl":  "downloads/ps-layer-visibility-tools/PS%E7%94%BB%E6%9D%BF%E5%AF%B9%E8%B1%A1%E6%98%BE%E7%A4%BA_%E9%9A%94%E7%A6%BB%E5%B7%A5%E5%85%B7.zip",
+                        "packageName":  "PS画板对象显示_隔离工具.zip",
+                        "packageSha256":  "0e297b549d50eb9e365e15f88d04b9c5e037687c83d0c3baf8c2f52516394354",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
@@ -304,8 +304,8 @@
                                       "优化前会备份设置。",
                                       "不覆盖 PSD，不强制结束 Photoshop，不编辑注册表。"
                                   ],
-                        "downloadUrl":  "downloads/ps-long-image-performance/ps-long-image-performance.zip",
-                        "packageName":  "ps-long-image-performance.zip",
+                        "downloadUrl":  "downloads/ps-long-image-performance/PS%E9%95%BF%E5%9B%BE%E4%B8%8D%E5%8D%A1%E4%BC%98%E5%8C%96%E5%8A%A9%E6%89%8B.zip",
+                        "packageName":  "PS长图不卡优化助手.zip",
                         "packageSha256":  "98f78fb84380a1bf90e20c2a5ca79c345f8355471b2dca5bd2591238d36544f8",
                         "files":  [
                                       {
@@ -355,8 +355,8 @@
                                       "支持外扩/内收、圆角刀线、锚点简化和 CMYK/专色设置。",
                                       "生产文件需和工厂确认专色名称。"
                                   ],
-                        "downloadUrl":  "downloads/ai-auto-cutline/ai-auto-cutline.zip",
-                        "packageName":  "ai-auto-cutline.zip",
+                        "downloadUrl":  "downloads/ai-auto-cutline/AI%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%88%80%E7%BA%BF%E6%8F%92%E4%BB%B6.zip",
+                        "packageName":  "AI自动生成刀线插件.zip",
                         "packageSha256":  "a5cfa44b361f83395ec74ac7bd23dcc945fac91fe3f0d6a3f4c9a62a8ed9c37d",
                         "files":  [
                                       {
@@ -392,8 +392,8 @@
                                       "这是坐标点击辅助，不是 Illustrator 原生命令。",
                                       "默认 ~ / ` 触发，Ctrl+Alt+Shift+~ 或停止 BAT 退出。"
                                   ],
-                        "downloadUrl":  "downloads/ai-locate-object-hotkey/ai-locate-object-hotkey.zip",
-                        "packageName":  "ai-locate-object-hotkey.zip",
+                        "downloadUrl":  "downloads/ai-locate-object-hotkey/AI%E5%9B%BE%E5%B1%82%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%BF%AB%E6%8D%B7%E9%94%AE.zip",
+                        "packageName":  "AI图层定位对象快捷键.zip",
                         "packageSha256":  "c8b119d74131a6d53cd8c440dea5e6e3ea8b3c98321d1225d254a904bcb64cf7",
                         "files":  [
                                       {
