@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-14 19:31:51",
+    "generatedAt":  "2026-08-14 19:42:17",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -22,7 +22,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%94%BB%E6%9D%BF%E5%95%86%E5%93%81%E5%9B%9B%E4%BB%B6%E5%A5%97.zip",
                         "packageName":  "PS批量导出画板商品四件套.zip",
-                        "packageSha256":  "a7c61d7dbaa52d03d7ed05e2920e410809b2df94b864c3d454b3de700b8f586d",
+                        "packageSha256":  "4b5a7589c0240aa5195071badbec15ca24956b041e51fc7c44c7b176ad9ab0c6",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -51,7 +51,7 @@
                     {
                         "slug":  "ai-embed-all-links",
                         "name":  "AI一键嵌入所有链接插件",
-                        "version":  "1.0.1",
+                        "version":  "1.1.0",
                         "updatedAt":  "2026-08-14",
                         "apps":  [
                                      "Illustrator"
@@ -59,27 +59,28 @@
                         "category":  "illustrator",
                         "type":  "JSX + 安装脚本",
                         "status":  "文件级整理，需 Illustrator 实机确认",
-                        "summary":  "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性嵌入，适合发工厂前整理文件。",
+                        "summary":  "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性压平成单个嵌入图像，适合发工厂前整理文件。",
                         "requirements":  "Illustrator 2020-2025，当前文件包含外部链接对象。",
                         "install":  "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 \u003e 脚本 运行。",
                         "notes":  [
                                       "建议先另存副本，再执行一键嵌入。",
                                       "缺失链接需要先重新链接后再运行。",
-                                      "2025 位移修正版：嵌入前记录对象边界，嵌入后自动校回原位置。"
+                                      "2025 位移修正版：合并前记录对象边界，合并后自动校回原位置。",
+                                      "PSD/PDF 等多层链接会按当前外观压平成一张 300ppi 透明背景位图。"
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E4%B8%80%E9%94%AE%E5%B5%8C%E5%85%A5%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI一键嵌入所有链接插件.zip",
-                        "packageSha256":  "25b1e8160e17a65dc21fed51d8bae5faed92b5202a80667f1071eb014ddb776d",
+                        "packageSha256":  "a7482daa80daf243c608d845881937c96fe1fc700667e6f1f61842b06c4b2b14",
                         "files":  [
                                       {
                                           "name":  "AI_一键嵌入所有链接.jsx",
-                                          "sizeBytes":  9467,
-                                          "sha256":  "4780c0a5c84780b6ea0c2c6b1821fb74a0e764fc911b43b86200c1d7e1a8c4ea"
+                                          "sizeBytes":  10445,
+                                          "sha256":  "cb34437cca39691b130fb672573b3c378cafa4861957aa66f1b6239ef68e416f"
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1855,
-                                          "sha256":  "e33878697dd8e34c8348b8c6d9e1ff9d61b6f4a53eca33a1a2106955ee3d8239"
+                                          "sizeBytes":  2119,
+                                          "sha256":  "13e5e88295a45f2c649b038838b9ca87c8ce34222fc537cf343d5957a8bd4dc1"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -87,7 +88,7 @@
                                           "sha256":  "f25e1a35ac45ea6320c8c32206ac94c7602cf86ad92338c1d11d2dee234e6da0"
                                       }
                                   ],
-                        "sizeBytes":  4444,
+                        "sizeBytes":  4853,
                         "fileCount":  3
                     },
                     {
@@ -110,7 +111,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS批量导出助手.zip",
-                        "packageSha256":  "1bf931667a16633e9feaae4df748d4941b38c5c3e6c501ed9cfa17e264526bc9",
+                        "packageSha256":  "cb4089e652a32258e606c0019e01b200666d8cca65fc7166892276f13c408e39",
                         "files":  [
                                       {
                                           "name":  "PS批量导出助手.jsx",
@@ -156,7 +157,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-guide-slice-export/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%88%87%E7%89%87%E5%AF%BC%E5%87%BA.zip",
                         "packageName":  "PS参考线切片导出.zip",
-                        "packageSha256":  "36081e4920814e92ed187f25859b165009472ddf47a523accfe75b4d64133010",
+                        "packageSha256":  "c96aeba42c7f1c73d5fc7c5033e6a3b40669497a23b853cf7d690bd356e58978",
                         "files":  [
                                       {
                                           "name":  "双击一键安装.bat",
@@ -197,7 +198,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-white-ink-layer/PS%E7%99%BD%E5%A2%A8%E5%9B%BE%E5%B1%82%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "PS白墨图层自动生成插件.zip",
-                        "packageSha256":  "17c6105abb9ec65f41fbe07b1d130d47b7a66d5cc8afef0e15ce1fb655c63040",
+                        "packageSha256":  "5fbb7b31ecbab36f2da81b64280573301da6886d6269e08106180d40479af042",
                         "files":  [
                                       {
                                           "name":  "PS_自动生成白墨图层.jsx",
@@ -239,7 +240,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/PS%E8%BD%AE%E5%BB%93%E5%8C%96%E6%8F%8F%E8%BE%B9%E5%8A%A9%E6%89%8B%20V2.zip",
                         "packageName":  "PS轮廓化描边助手 V2.zip",
-                        "packageSha256":  "3c52eb8eb56d9e20d9ce7cb7e19732976ac4e189029cbac01bf991a3a2f7800a",
+                        "packageSha256":  "256b41ef307004a9878c2138119b6e731370bcea361515cc8471c72730d127b6",
                         "files":  [
                                       {
                                           "name":  "01_PS运行_轮廓化描边助手V2.jsx",
@@ -285,7 +286,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/PS%E7%94%BB%E6%9D%BF%E5%AF%B9%E8%B1%A1%E6%98%BE%E7%A4%BA_%E9%9A%94%E7%A6%BB%E5%B7%A5%E5%85%B7.zip",
                         "packageName":  "PS画板对象显示_隔离工具.zip",
-                        "packageSha256":  "0b48a7080e258f906c37de6685536addf0d889c81db7053f47bcd0f4e117211f",
+                        "packageSha256":  "0937f4f5b1f22b38e8fc7eccf26d640558d016125c20a88fc2edcb2842c35c52",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
@@ -337,7 +338,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-long-image-performance/PS%E9%95%BF%E5%9B%BE%E4%B8%8D%E5%8D%A1%E4%BC%98%E5%8C%96%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS长图不卡优化助手.zip",
-                        "packageSha256":  "b386f0c71040bd5614733db241547105fe47c8b05768a8afcdd1d81e6e786a9a",
+                        "packageSha256":  "0736f3597d9f6d7818acb38233cefc034fb990e1a31257779fcb47bb340d4f16",
                         "files":  [
                                       {
                                           "name":  "PS_LongImage_Performance_Assistant.jsx",
@@ -383,7 +384,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-auto-cutline/AI%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%88%80%E7%BA%BF%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI自动生成刀线插件.zip",
-                        "packageSha256":  "f5a0b51cecc0e01df114fbb793c5c980e1519f11edb8931544eaf8869086f5e6",
+                        "packageSha256":  "993bcaf76945abf7964e8989b64270f7a899061c8af664ea384fe1de4d73718e",
                         "files":  [
                                       {
                                           "name":  "AI_自动生成刀线.jsx",
@@ -425,7 +426,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-locate-object-hotkey/AI%E5%9B%BE%E5%B1%82%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%BF%AB%E6%8D%B7%E9%94%AE.zip",
                         "packageName":  "AI图层定位对象快捷键.zip",
-                        "packageSha256":  "3fc667db61b2677d4a98cbdba17191d090fd1fc9df6c478d2dd322b0184b8096",
+                        "packageSha256":  "5100e3190ecbe1dbb4b7279991ba6624221fb28f703d7ba19f991dafd934b65e",
                         "files":  [
                                       {
                                           "name":  "AI_Locate_Object_Hotkey.ps1",

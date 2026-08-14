@@ -26,19 +26,20 @@
     {
       "slug": "ai-embed-all-links",
       "name": "AI一键嵌入所有链接插件",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "updatedAt": "2026-08-14",
       "apps": ["Illustrator"],
       "category": "illustrator",
       "type": "JSX + 安装脚本",
       "status": "文件级整理，需 Illustrator 实机确认",
-      "summary": "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性嵌入，适合发工厂前整理文件。",
+      "summary": "把 Illustrator 文件里的外部链接图像、PSD、PDF 等一次性压平成单个嵌入图像，适合发工厂前整理文件。",
       "requirements": "Illustrator 2020-2025，当前文件包含外部链接对象。",
       "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 > 脚本 运行。",
       "notes": [
         "建议先另存副本，再执行一键嵌入。",
         "缺失链接需要先重新链接后再运行。",
-        "2025 位移修正版：嵌入前记录对象边界，嵌入后自动校回原位置。"
+        "2025 位移修正版：合并前记录对象边界，合并后自动校回原位置。",
+        "PSD/PDF 等多层链接会按当前外观压平成一张 300ppi 透明背景位图。"
       ],
       "sourceFiles": [
         "周边/AI一键嵌入所有链接插件/AI_一键嵌入所有链接.jsx",
