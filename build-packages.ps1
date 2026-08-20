@@ -108,6 +108,15 @@ function Test-PluginApp($plugin, [string]$appName) {
 function Write-GeneratedInstallerBat($plugin, [string]$path) {
   $installPhotoshop = Test-PluginApp $plugin "Photoshop"
   $installIllustrator = Test-PluginApp $plugin "Illustrator"
+  $obsoleteIllustratorLines = ""
+
+  if ($null -ne $plugin.obsoleteScriptNames) {
+    foreach ($obsoleteName in @($plugin.obsoleteScriptNames)) {
+      if (-not [string]::IsNullOrWhiteSpace([string]$obsoleteName)) {
+        $obsoleteIllustratorLines += "        if exist `"%%~dpF$obsoleteName`" del /q `"%%~dpF$obsoleteName`" >nul 2>&1`r`n"
+      }
+    }
+  }
 
   if ($installPhotoshop -and $installIllustrator) {
     $installLine = 'call :installByName "%%~fJ" "%%~nxJ"'
@@ -124,6 +133,7 @@ function Write-GeneratedInstallerBat($plugin, [string]$path) {
 
   $bat = @"
 @echo off
+chcp 65001 >nul
 setlocal EnableExtensions
 pushd "%~dp0"
 
@@ -183,7 +193,7 @@ for /d %%D in ("%ProgramFiles%\Adobe\Adobe Illustrator*") do (
   if exist "%%~fD\Presets\" (
     for /f "delims=" %%F in ('dir /b /s /a-d "%%~fD\Presets\*.jsx" 2^>nul') do (
       if not defined COPIED_AI_DIR (
-        copy /y "%~1" "%%~dpF%~2" >nul
+$obsoleteIllustratorLines        copy /y "%~1" "%%~dpF%~2" >nul
         echo Installed [Illustrator] %%~nxD %%~dpF%~2
         set "FOUND=1"
         set "COPIED_AI_DIR=1"
@@ -194,7 +204,8 @@ for /d %%D in ("%ProgramFiles%\Adobe\Adobe Illustrator*") do (
 exit /b
 "@
 
-  Set-Content -LiteralPath $path -Value $bat -Encoding ASCII
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($path, $bat, $utf8NoBom)
 }
 
 function ConvertTo-UrlSegment([string]$value) {
