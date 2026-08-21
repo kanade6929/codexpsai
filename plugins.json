@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-21 14:37:06",
+    "generatedAt":  "2026-08-21 15:19:26",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -52,23 +52,23 @@
                     {
                         "slug":  "ai-embed-all-links",
                         "name":  "AI文件发厂前整理助手",
-                        "version":  "1.5.6",
+                        "version":  "1.5.7",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator"
                                  ],
                         "category":  "illustrator",
                         "type":  "JSX + 安装脚本",
-                        "status":  "Illustrator 2025 基础嵌入已验证",
+                        "status":  "Illustrator 2025 基础嵌入与位置已验证",
                         "summary":  "Illustrator 发厂前整理工具：嵌入链接、删除隐藏/空白内容、文字转曲，并可一键执行全部步骤。",
                         "requirements":  "Illustrator 2020-2025，需要整理的 AI 文件。",
                         "install":  "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Illustrator，从 文件 \u003e 脚本 运行。",
                         "notes":  [
                                       "建议先另存副本，再执行一键嵌入。",
                                       "缺失链接需要先重新链接后再运行。",
+                                      "1.5.7 增加嵌入后位置补偿：仅在外框发生位移时等量平移，不缩放、不编组。",
                                       "1.5.6 修复 Illustrator 2025 嵌入命令未完成：改为从后往前逐个嵌入链接。",
-                                      "已用 Illustrator 2025 临时文档验证两个 PNG 链接均成功嵌入，嵌入前后对象边界坐标一致。",
-                                      "嵌入过程不自动编组、缩放或校正位置。",
+                                      "已用 Illustrator 2025 临时文档验证两个 PNG 链接均成功嵌入。",
                                       "发厂前清理可删除隐藏图层/对象（包括隐藏路径）、空文本、空编组和空图层；不再自动删除 0% 透明对象。",
                                       "安全修正：未隐藏的路径和复合路径不会作为空白对象清理，避免误删正常刀线。",
                                       "新增一键文字转曲：调用 Illustrator 原生全选和文字创建轮廓命令；隐藏或锁定文字不处理。",
@@ -82,17 +82,17 @@
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E6%96%87%E4%BB%B6%E5%8F%91%E5%8E%82%E5%89%8D%E6%95%B4%E7%90%86%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "AI文件发厂前整理助手.zip",
-                        "packageSha256":  "5fa4b3b155a5874af52a5bdb09e1ba2ce0f79ea469d5890068e14cb024050956",
+                        "packageSha256":  "f3ac18080134c4beb8540b2636515bab7d4935bd7b32b3d4680143f2d7b204b7",
                         "files":  [
                                       {
                                           "name":  "AI_文件发厂前整理助手.jsx",
-                                          "sizeBytes":  20565,
-                                          "sha256":  "8601808eb0aa74ecbf7468e84cbf6c5353ae0c66d8e70443c7e391fc6ccf0d47"
+                                          "sizeBytes":  22835,
+                                          "sha256":  "cde2572d360450eab8336d319713adfa787e8fefcf650f24c8dd442bd7c42b6d"
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1392,
-                                          "sha256":  "d1c8e65f9b53ab773fa4f6351bdacb0aa70fd378c24e12009f8306366887b2b3"
+                                          "sizeBytes":  1440,
+                                          "sha256":  "859cfa2dfb5c31e24c78cd25c62ef0ce655349083301ebdd2230385d0b7eccbd"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -100,7 +100,7 @@
                                           "sha256":  "5049cdc48fef4dc2e1a99a6d511b087d74f8c960dbcba3d8eefe962978cc44be"
                                       }
                                   ],
-                        "sizeBytes":  7511,
+                        "sizeBytes":  8011,
                         "fileCount":  3
                     },
                     {
