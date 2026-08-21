@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-21 14:17:51",
+    "generatedAt":  "2026-08-21 14:37:06",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -52,22 +52,23 @@
                     {
                         "slug":  "ai-embed-all-links",
                         "name":  "AI文件发厂前整理助手",
-                        "version":  "1.5.5",
+                        "version":  "1.5.6",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator"
                                  ],
                         "category":  "illustrator",
                         "type":  "JSX + 安装脚本",
-                        "status":  "文件级整理，需 Illustrator 实机确认",
-                        "summary":  "Illustrator 发厂前整理工具：原生嵌入链接、删除隐藏/空白内容、文字转曲，并可一键执行全部步骤。",
+                        "status":  "Illustrator 2025 基础嵌入已验证",
+                        "summary":  "Illustrator 发厂前整理工具：嵌入链接、删除隐藏/空白内容、文字转曲，并可一键执行全部步骤。",
                         "requirements":  "Illustrator 2020-2025，需要整理的 AI 文件。",
                         "install":  "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Illustrator，从 文件 \u003e 脚本 运行。",
                         "notes":  [
                                       "建议先另存副本，再执行一键嵌入。",
                                       "缺失链接需要先重新链接后再运行。",
-                                      "1.5.5 改为打开链接面板、一次性选中所有未嵌入链接，再调用 Illustrator 原生 placedEmbed 命令。",
-                                      "嵌入过程不再逐个调用 item.embed()，也不自动编组、缩放或校正位置。",
+                                      "1.5.6 修复 Illustrator 2025 嵌入命令未完成：改为从后往前逐个嵌入链接。",
+                                      "已用 Illustrator 2025 临时文档验证两个 PNG 链接均成功嵌入，嵌入前后对象边界坐标一致。",
+                                      "嵌入过程不自动编组、缩放或校正位置。",
                                       "发厂前清理可删除隐藏图层/对象（包括隐藏路径）、空文本、空编组和空图层；不再自动删除 0% 透明对象。",
                                       "安全修正：未隐藏的路径和复合路径不会作为空白对象清理，避免误删正常刀线。",
                                       "新增一键文字转曲：调用 Illustrator 原生全选和文字创建轮廓命令；隐藏或锁定文字不处理。",
@@ -81,17 +82,17 @@
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E6%96%87%E4%BB%B6%E5%8F%91%E5%8E%82%E5%89%8D%E6%95%B4%E7%90%86%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "AI文件发厂前整理助手.zip",
-                        "packageSha256":  "db91e9f16e427a8f95d7ac44f7ffaee0744b7a14c4a3d935358e78fb71bdbca6",
+                        "packageSha256":  "5fa4b3b155a5874af52a5bdb09e1ba2ce0f79ea469d5890068e14cb024050956",
                         "files":  [
                                       {
                                           "name":  "AI_文件发厂前整理助手.jsx",
-                                          "sizeBytes":  20794,
-                                          "sha256":  "963eba76f0f99859c59b9409d9e68c373c87582993a7d106479a8a8ad8790439"
+                                          "sizeBytes":  20565,
+                                          "sha256":  "8601808eb0aa74ecbf7468e84cbf6c5353ae0c66d8e70443c7e391fc6ccf0d47"
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1462,
-                                          "sha256":  "4369fbda339c52721d196560f73c3f0ee664a68054b7145699626c598fe56c7f"
+                                          "sizeBytes":  1392,
+                                          "sha256":  "d1c8e65f9b53ab773fa4f6351bdacb0aa70fd378c24e12009f8306366887b2b3"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -99,7 +100,7 @@
                                           "sha256":  "5049cdc48fef4dc2e1a99a6d511b087d74f8c960dbcba3d8eefe962978cc44be"
                                       }
                                   ],
-                        "sizeBytes":  7690,
+                        "sizeBytes":  7511,
                         "fileCount":  3
                     },
                     {
