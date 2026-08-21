@@ -112,6 +112,12 @@ function Get-InstallerMessage($plugin, [string]$name, [string]$fallback) {
       return [string]$property.Value
     }
   }
+  if ($null -ne $script:manifest -and $null -ne $script:manifest.installerMessages) {
+    $property = $script:manifest.installerMessages.PSObject.Properties[$name]
+    if ($null -ne $property -and -not [string]::IsNullOrWhiteSpace([string]$property.Value)) {
+      return [string]$property.Value
+    }
+  }
   return $fallback
 }
 

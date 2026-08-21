@@ -1,22 +1,40 @@
 {
   "generatedBy": "Codex Adobe tools archive",
   "projectRootHint": "This manifest is resolved relative to the AI项目 workspace root.",
+  "installerMessages": {
+    "requestAdmin": "正在请求管理员权限，请在弹窗中选择“是”……",
+    "elevationFailed": "未能以管理员权限启动安装。",
+    "runAsAdmin": "请右键单击这个 BAT，选择“以管理员身份运行”。",
+    "adminNotObtained": "没有获得管理员权限，安装无法继续。",
+    "noJsx": "安装器旁边没有找到 JSX 插件文件。",
+    "extractZip": "请先完整解压 ZIP，再双击这个 BAT 安装。",
+    "noAdobeFolder": "没有找到 Photoshop 或 Illustrator 的脚本文件夹。",
+    "confirmAdobe": "请确认 Adobe 软件安装在 C:\\Program Files\\Adobe。",
+    "completed": "安装完成。",
+    "restartAdobe": "请重启 Adobe，然后从“文件 > 脚本”运行插件。",
+    "log": "安装日志位置：",
+    "failedPhotoshop": "Photoshop 安装失败：",
+    "installedPhotoshop": "Photoshop 安装成功：",
+    "failedIllustrator": "Illustrator 安装失败：",
+    "installedIllustrator": "Illustrator 安装成功："
+  },
   "plugins": [
     {
       "slug": "ps-artboard-four-piece",
       "name": "PS批量导出画板商品四件套",
-      "version": "1.0.0",
-      "updatedAt": "2026-07-30",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX",
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "按可见画板批量生成商品主图、白底图、透明 PNG 和调整 PSD。",
       "requirements": "Photoshop 2020-2025，含画板的 PSD/PSB 文件。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "适合周边商品图批量导出。",
-        "已同步过工作区和交接包，实机导出仍建议用小文件复测。"
+        "已同步过工作区和交接包，实机导出仍建议用小文件复测。",
+        "1.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "photoshop-scripts/自动导出商品四件套图V1.jsx",
@@ -26,7 +44,7 @@
     {
       "slug": "ai-embed-all-links",
       "name": "AI文件发厂前整理助手",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "updatedAt": "2026-08-21",
       "apps": ["Illustrator"],
       "category": "illustrator",
@@ -36,23 +54,6 @@
       "requirements": "Illustrator 2020-2025，需要整理的 AI 文件。",
       "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Illustrator，从 文件 > 脚本 运行。",
       "obsoleteScriptNames": ["AI_一键嵌入所有链接.jsx"],
-      "installerMessages": {
-        "requestAdmin": "正在请求管理员权限，请在弹窗中选择“是”……",
-        "elevationFailed": "未能以管理员权限启动安装。",
-        "runAsAdmin": "请右键单击这个 BAT，选择“以管理员身份运行”。",
-        "adminNotObtained": "没有获得管理员权限，安装无法继续。",
-        "noJsx": "安装器旁边没有找到 JSX 插件文件。",
-        "extractZip": "请先完整解压 ZIP，再双击这个 BAT 安装。",
-        "noAdobeFolder": "没有找到 Photoshop 或 Illustrator 的脚本文件夹。",
-        "confirmAdobe": "请确认 Adobe 软件安装在 C:\\Program Files\\Adobe。",
-        "completed": "安装完成。",
-        "restartAdobe": "请重启 Adobe，然后从“文件 > 脚本”运行插件。",
-        "log": "安装日志位置：",
-        "failedPhotoshop": "Photoshop 安装失败：",
-        "installedPhotoshop": "Photoshop 安装成功：",
-        "failedIllustrator": "Illustrator 安装失败：",
-        "installedIllustrator": "Illustrator 安装成功："
-      },
       "notes": [
         "建议先另存副本，再执行一键嵌入。",
         "缺失链接需要先重新链接后再运行。",
@@ -65,7 +66,8 @@
         "性能修正：隐藏与空白对象合并为一次分层扫描，并增加处理中状态与卡顿等待提示。",
         "1.5.1 修复安装器闪退：提权时等待结果，失败时保留窗口，并生成 install-log.txt。",
         "安装前必须先完整解压 ZIP；直接在压缩包内运行时，安装器会提示缺少 JSX 文件。",
-        "1.5.2 将安装器的主要状态和错误提示改为中文，同时保持 BAT 为纯 ASCII 以避免乱码闪退。"
+        "1.5.2 将安装器的主要状态和错误提示改为中文，同时保持 BAT 为纯 ASCII 以避免乱码闪退。",
+        "1.5.3 与网站内其他插件统一使用最新版一键安装器。"
       ],
       "sourceFiles": [
         "周边/AI一键嵌入所有链接插件/AI_文件发厂前整理助手.jsx",
@@ -75,40 +77,41 @@
     {
       "slug": "ps-existing-slice-export",
       "name": "PS批量导出助手",
-      "version": "1.0.0",
-      "updatedAt": "2026-07-23",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX + 安装脚本",
       "status": "外发包已整理，需 Photoshop 实机确认",
       "summary": "用于一键导出多个当前打开的 PSD 文档，支持 PNG 和 JPG。",
       "requirements": "Photoshop 2020+，当前已打开一个或多个 PSD/PSB 文档。",
-      "install": "优先运行包内 一键安装到Photoshop.ps1；也可手动复制 PS批量导出助手.jsx 到 Presets/Scripts。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "可只导出当前文档，也可批量导出当前打开的全部 PSD / PSB 文档。",
-        "PNG 保留透明；JPG 使用白色背景和高质量导出。"
+        "PNG 保留透明；JPG 使用白色背景和高质量导出。",
+        "1.0.1 移除旧安装 PS1，统一升级为中文防闪退安装器。"
       ],
       "sourceFiles": [
         "交接文档/PS批量导出助手_外发文件夹/PS批量导出助手.jsx",
-        "交接文档/PS批量导出助手_外发文件夹/使用说明.txt",
-        "交接文档/PS批量导出助手_外发文件夹/一键安装到Photoshop.ps1"
+        "交接文档/PS批量导出助手_外发文件夹/使用说明.txt"
       ]
     },
     {
       "slug": "ps-guide-slice-export",
       "name": "PS参考线切片导出",
-      "version": "1.0.0",
-      "updatedAt": "2026-07-23",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX",
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "按画布边缘和水平/垂直参考线生成切片，并选择 PNG/JPG 输出。",
       "requirements": "Photoshop 2020+，当前文档已有参考线。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "PNG 保留透明，JPG 使用白底并以高质量输出。",
-        "这是参考线派生切片工具，不等同于现有切片导出工具。"
+        "这是参考线派生切片工具，不等同于现有切片导出工具。",
+        "1.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "photoshop-scripts/一键导出参考线切片.jsx",
@@ -118,18 +121,19 @@
     {
       "slug": "ps-white-ink-layer",
       "name": "PS白墨图层自动生成插件",
-      "version": "1.0.0",
-      "updatedAt": "2026-08-05",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX",
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "根据当前选中图层或图层组的非透明区域生成白墨底版图层。",
       "requirements": "Photoshop 2020+，适合透明贴纸、亚克力、UV 打印等文件。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop，从 文件 > 脚本 运行。",
       "notes": [
         "生产交付默认填充纯黑，浅蓝色只作为检查色。",
-        "生成结果是普通图层，不是专色通道。"
+        "生成结果是普通图层，不是专色通道。",
+        "1.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "周边/PS白墨图层自动生成插件/PS_自动生成白墨图层.jsx",
@@ -139,18 +143,19 @@
     {
       "slug": "ps-ai-outline-stroke-v2",
       "name": "PS轮廓化描边助手 V2",
-      "version": "2.0.0",
-      "updatedAt": "2026-07-09",
+      "version": "2.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop", "Illustrator"],
       "category": "bridge",
       "type": "PS + AI 联动 JSX",
       "status": "V2 主推版，需 PS/AI 实机确认",
       "summary": "把 Photoshop 形状描边转成真实矢量轮廓，适合烫金、光油、刀线和专色版。",
       "requirements": "Photoshop + Illustrator，建议先手动打开 Illustrator。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop / Illustrator。优先从 Photoshop 的 文件 > 脚本 运行 01_PS 脚本，联动失败再在 Illustrator 运行 02_AI 备用脚本。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop / Illustrator。优先从 Photoshop 的 文件 > 脚本 运行 01_PS 脚本，联动失败再在 Illustrator 运行 02_AI 备用脚本。",
       "notes": [
         "旧测试版不放入主下载卡片。",
-        "位图描摹是测试功能，正式交付前需要人工检查路径。"
+        "位图描摹是测试功能，正式交付前需要人工检查路径。",
+        "2.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "周边/PS轮廓化描边助手V2/01_PS运行_轮廓化描边助手V2.jsx",
@@ -161,18 +166,19 @@
     {
       "slug": "ps-layer-visibility-tools",
       "name": "PS画板对象显示/隔离工具",
-      "version": "1.0.0",
-      "updatedAt": "2026-07-23",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop"],
       "category": "photoshop",
       "type": "JSX 套件",
       "status": "文件级验证，需 Photoshop 实机确认",
       "summary": "用于显示所有对象、只显示选中对象、只显示每画板第一对象等画板整理流程。",
       "requirements": "Photoshop 2020+，含图层或画板结构的 PSD/PSB。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Photoshop，从 文件 > 脚本 运行需要的工具。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Photoshop，从 文件 > 脚本 运行需要的工具。",
       "notes": [
         "适合作为商品四件套导出前的图层整理辅助。",
-        "包内自动生成简版使用说明。"
+        "包内自动生成简版使用说明。",
+        "1.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "photoshop-scripts/显示所有对象.jsx",
@@ -183,18 +189,19 @@
     {
       "slug": "ps-long-image-performance",
       "name": "PS长图不卡优化助手",
-      "version": "2.0.0",
-      "updatedAt": "2026-07-23",
+      "version": "2.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Photoshop", "Windows"],
       "category": "assistant",
       "type": "EXE + JSX",
       "status": "EXE 烟测和安装验证，Photoshop 实机操作需确认",
       "summary": "扫描多版本 Photoshop 设置并提供长图性能优化、缓存清理和轻量副本辅助。",
       "requirements": "Windows，Photoshop 2020+；部分安装动作需要管理员权限。",
-      "install": "运行 EXE 查看环境；如需安装 JSX 菜单脚本，下载解压后双击包内 双击一键安装.bat，安装成功后重启 Photoshop。",
+      "install": "运行 EXE 查看环境；如需安装 JSX 菜单脚本，请先完整解压 ZIP，再双击 双击一键安装.bat 并允许管理员权限，安装完成后重启 Photoshop。",
       "notes": [
         "优化前会备份设置。",
-        "不覆盖 PSD，不强制结束 Photoshop，不编辑注册表。"
+        "不覆盖 PSD，不强制结束 Photoshop，不编辑注册表。",
+        "2.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "周边/PS长图不卡优化助手/PS长图不卡优化助手.exe",
@@ -205,18 +212,19 @@
     {
       "slug": "ai-auto-cutline",
       "name": "AI自动生成刀线插件",
-      "version": "1.0.0",
-      "updatedAt": "2026-07-16",
+      "version": "1.0.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Illustrator"],
       "category": "illustrator",
       "type": "JSX",
       "status": "文件级整理，需 Illustrator 实机确认",
       "summary": "在 Illustrator 中根据选中对象或图层自动生成 CutContour 刀线。",
       "requirements": "Illustrator 2020-2025，适合透明 PNG、矢量对象或已扩展路径。",
-      "install": "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 > 脚本 运行。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Illustrator，从 文件 > 脚本 运行。",
       "notes": [
         "支持外扩/内收、圆角刀线、锚点简化和 CMYK/专色设置。",
-        "生产文件需和工厂确认专色名称。"
+        "生产文件需和工厂确认专色名称。",
+        "1.0.1 统一升级为中文防闪退安装器，并增加安装日志。"
       ],
       "sourceFiles": [
         "周边/AI自动刀线插件/AI_自动生成刀线.jsx",
@@ -226,18 +234,19 @@
     {
       "slug": "ai-locate-object-hotkey",
       "name": "AI图层定位对象快捷键",
-      "version": "1.1.0",
-      "updatedAt": "2026-08-05",
+      "version": "1.1.1",
+      "updatedAt": "2026-08-21",
       "apps": ["Illustrator", "Windows"],
       "category": "illustrator",
       "type": "JSX + PowerShell 热键",
       "status": "启动和自测通过，真实点击需用户校准确认",
       "summary": "给 Illustrator 图层面板底部的“定位对象”按钮增加可校准快捷键。",
       "requirements": "Windows + Illustrator；面板位置变化、显示器或缩放变化后需要重新校准。",
-      "install": "先双击包内 双击一键安装.bat 安装 JSX 菜单脚本；重启 Illustrator 后从 文件 > 脚本 打开图层面板，再双击启动 BAT。鼠标悬停定位对象按钮后按 Ctrl+Alt+~ 校准。",
+      "install": "先完整解压 ZIP，再双击 双击一键安装.bat 并允许管理员权限；重启 Illustrator 后从 文件 > 脚本 打开图层面板，再双击启动 BAT。鼠标悬停定位对象按钮后按 Ctrl+Alt+~ 校准。",
       "notes": [
         "这是坐标点击辅助，不是 Illustrator 原生命令。",
-        "默认 ~ / ` 触发，Ctrl+Alt+Shift+~ 或停止 BAT 退出。"
+        "默认 ~ / ` 触发，Ctrl+Alt+Shift+~ 或停止 BAT 退出。",
+        "1.1.1 安装 JSX 的 BAT 已统一升级；运行热键所需的 PowerShell 引擎继续保留。"
       ],
       "sourceFiles": [
         "周边/AI图层定位对象快捷键/AI_图层面板定位对象.jsx",
