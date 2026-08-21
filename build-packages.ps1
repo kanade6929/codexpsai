@@ -113,7 +113,9 @@ function Write-GeneratedInstallerBat($plugin, [string]$path) {
   if ($null -ne $plugin.obsoleteScriptNames) {
     foreach ($obsoleteName in @($plugin.obsoleteScriptNames)) {
       if (-not [string]::IsNullOrWhiteSpace([string]$obsoleteName)) {
-        $obsoleteIllustratorLines += "        if exist `"%%~dpF$obsoleteName`" del /q `"%%~dpF$obsoleteName`" >nul 2>&1`r`n"
+        $obsoleteScript = "`$ProgressPreference = 'SilentlyContinue'; `$p = Join-Path `$env:AI_TARGET_DIR '" + ([string]$obsoleteName).Replace("'", "''") + "'; if (Test-Path -LiteralPath `$p) { Remove-Item -LiteralPath `$p -Force }"
+        $obsoleteEncoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($obsoleteScript))
+        $obsoleteIllustratorLines += "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand $obsoleteEncoded >> `"%LOG_FILE%`" 2>&1`r`n"
       }
     }
   }
@@ -133,30 +135,68 @@ function Write-GeneratedInstallerBat($plugin, [string]$path) {
 
   $bat = @"
 @echo off
-chcp 65001 >nul
 setlocal EnableExtensions
 pushd "%~dp0"
+set "LOG_FILE=%~dp0install-log.txt"
+> "%LOG_FILE%" echo [%date% %time%] Installer started from %~dp0
 
-net session >nul 2>&1
+if /i "%~1"=="--elevated" goto :elevated
+
+fltmc >nul 2>&1
+if "%errorlevel%"=="0" goto :elevated
+
+echo Requesting administrator permission...
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "try { `$p = Start-Process -FilePath '%~f0' -ArgumentList '--elevated' -Verb RunAs -WorkingDirectory '%~dp0' -Wait -PassThru; exit `$p.ExitCode } catch { Write-Host `$_.Exception.Message; exit 1 }"
 if not "%errorlevel%"=="0" (
-  echo Requesting administrator permission...
-  powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -FilePath '%~f0' -Verb RunAs -WorkingDirectory '%~dp0'"
+  echo.
+  echo Installation did not start with administrator permission.
+  echo Please right-click this BAT and choose Run as administrator.
+  echo See log: %LOG_FILE%
+  >> "%LOG_FILE%" echo Elevation failed or was cancelled.
+  echo.
+  pause
   exit /b
+)
+exit /b
+
+:elevated
+fltmc >nul 2>&1
+if not "%errorlevel%"=="0" (
+  echo Administrator permission was not obtained.
+  echo Please right-click this BAT and choose Run as administrator.
+  >> "%LOG_FILE%" echo Administrator check failed after elevation.
+  echo.
+  pause
+  exit /b 1
 )
 
 set "FOUND=0"
+set "SOURCE_COUNT=0"
 
 for %%J in (*.jsx) do (
+  set "SOURCE_COUNT=1"
   $installLine
 )
 
-if "%FOUND%"=="0" (
+if "%SOURCE_COUNT%"=="0" (
+  echo No JSX plugin file was found beside this installer.
+  echo Please extract the whole ZIP first, then double-click this BAT again.
+  >> "%LOG_FILE%" echo No JSX source file was found.
+) else if "%FOUND%"=="0" (
   echo No Photoshop or Illustrator script folder was found.
   echo Please confirm Adobe is installed under C:\Program Files\Adobe.
+  >> "%LOG_FILE%" echo No supported Adobe script folder was found.
+) else (
+  echo.
+  echo Installation completed successfully.
+  echo Restart Adobe, then open File - Scripts to run the tool.
+  >> "%LOG_FILE%" echo Installation completed successfully.
 )
 
 echo.
+echo Log: %LOG_FILE%
 pause
+popd
 exit /b
 
 :installByName
@@ -180,9 +220,13 @@ exit /b
 :copyPhotoshop
 for /d %%D in ("%ProgramFiles%\Adobe\Adobe Photoshop*") do (
   if exist "%%~fD\Presets\Scripts\" (
-    copy /y "%~1" "%%~fD\Presets\Scripts\%~2" >nul
-    echo Installed [Photoshop] %%~nxD\Presets\Scripts\%~2
-    set "FOUND=1"
+    copy /y "%~1" "%%~fD\Presets\Scripts\%~2" >> "%LOG_FILE%" 2>&1
+    if errorlevel 1 (
+      echo Failed [Photoshop] %%~nxD\Presets\Scripts\%~2
+    ) else (
+      echo Installed [Photoshop] %%~nxD\Presets\Scripts\%~2
+      set "FOUND=1"
+    )
   )
 )
 exit /b
@@ -191,21 +235,39 @@ exit /b
 for /d %%D in ("%ProgramFiles%\Adobe\Adobe Illustrator*") do (
   set "COPIED_AI_DIR="
   if exist "%%~fD\Presets\" (
-    for /f "delims=" %%F in ('dir /b /s /a-d "%%~fD\Presets\*.jsx" 2^>nul') do (
-      if not defined COPIED_AI_DIR (
-$obsoleteIllustratorLines        copy /y "%~1" "%%~dpF%~2" >nul
-        echo Installed [Illustrator] %%~nxD %%~dpF%~2
-        set "FOUND=1"
-        set "COPIED_AI_DIR=1"
+    for /d %%L in ("%%~fD\Presets\*") do (
+      if not defined COPIED_AI_DIR if exist "%%~fL\Scripts\" (
+        set "AI_TARGET_DIR=%%~fL\Scripts"
+        call :copyIllustratorToDir "%~1" "%~2"
+        set "AI_TARGET_DIR="
+      )
+    )
+    if not defined COPIED_AI_DIR (
+      for /f "delims=" %%F in ('dir /b /s /a-d "%%~fD\Presets\*.jsx" 2^>nul') do (
+        if not defined COPIED_AI_DIR (
+          set "AI_TARGET_DIR=%%~dpF"
+          call :copyIllustratorToDir "%~1" "%~2"
+          set "AI_TARGET_DIR="
+        )
       )
     )
   )
 )
 exit /b
+
+:copyIllustratorToDir
+${obsoleteIllustratorLines}copy /y "%~1" "%AI_TARGET_DIR%\%~2" >> "%LOG_FILE%" 2>&1
+if errorlevel 1 (
+  echo Failed [Illustrator] %AI_TARGET_DIR%\%~2
+) else (
+  echo Installed [Illustrator] %AI_TARGET_DIR%\%~2
+  set "FOUND=1"
+  set "COPIED_AI_DIR=1"
+)
+exit /b
 "@
 
-  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
-  [System.IO.File]::WriteAllText($path, $bat, $utf8NoBom)
+  [System.IO.File]::WriteAllText($path, $bat, [Text.Encoding]::ASCII)
 }
 
 function ConvertTo-UrlSegment([string]$value) {

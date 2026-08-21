@@ -1,5 +1,5 @@
 ﻿{
-    "generatedAt":  "2026-08-20 18:09:17",
+    "generatedAt":  "2026-08-21 11:23:29",
     "pluginCount":  10,
     "plugins":  [
                     {
@@ -22,7 +22,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%94%BB%E6%9D%BF%E5%95%86%E5%93%81%E5%9B%9B%E4%BB%B6%E5%A5%97.zip",
                         "packageName":  "PS批量导出画板商品四件套.zip",
-                        "packageSha256":  "c110b55f255517f7e95cf0fb2690ed9cfb42ad43290585a2b2a063fa28229746",
+                        "packageSha256":  "21e722817b777efc8366b5a4b467805aa23763d89946353f1e958db485dc6753",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -36,8 +36,8 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       },
                                       {
                                           "name":  "自动导出商品四件套图V1.jsx",
@@ -45,14 +45,14 @@
                                           "sha256":  "d1586d5293b2967227d24809cc936aa8ec317c4828be09d12d20aeed180d3ab1"
                                       }
                                   ],
-                        "sizeBytes":  780226,
+                        "sizeBytes":  780781,
                         "fileCount":  4
                     },
                     {
                         "slug":  "ai-embed-all-links",
                         "name":  "AI文件发厂前整理助手",
-                        "version":  "1.5.0",
-                        "updatedAt":  "2026-08-20",
+                        "version":  "1.5.1",
+                        "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator"
                                  ],
@@ -61,7 +61,7 @@
                         "status":  "文件级整理，需 Illustrator 实机确认",
                         "summary":  "Illustrator 发厂前整理工具：原生嵌入链接、删除隐藏/空白内容、文字转曲，并可一键执行全部步骤。",
                         "requirements":  "Illustrator 2020-2025，需要整理的 AI 文件。",
-                        "install":  "下载解压后双击包内 双击一键安装.bat；安装成功后重启 Illustrator，从 文件 \u003e 脚本 运行。",
+                        "install":  "先完整解压 ZIP，再双击 双击一键安装.bat；允许管理员权限。安装完成后重启 Illustrator，从 文件 \u003e 脚本 运行。",
                         "notes":  [
                                       "建议先另存副本，再执行一键嵌入。",
                                       "缺失链接需要先重新链接后再运行。",
@@ -71,11 +71,13 @@
                                       "安全修正：未隐藏的路径和复合路径不会作为空白对象清理，避免误删正常刀线。",
                                       "新增一键文字转曲：调用 Illustrator 原生全选和文字创建轮廓命令；隐藏或锁定文字不处理。",
                                       "新增一键执行全部：依次清理隐藏/空白内容、嵌入剩余链接、执行文字转曲。",
-                                      "性能修正：隐藏与空白对象合并为一次分层扫描，并增加处理中状态与卡顿等待提示。"
+                                      "性能修正：隐藏与空白对象合并为一次分层扫描，并增加处理中状态与卡顿等待提示。",
+                                      "1.5.1 修复安装器闪退：提权时等待结果，失败时保留窗口，并生成 install-log.txt。",
+                                      "安装前必须先完整解压 ZIP；直接在压缩包内运行时，安装器会提示缺少 JSX 文件。"
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E6%96%87%E4%BB%B6%E5%8F%91%E5%8E%82%E5%89%8D%E6%95%B4%E7%90%86%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "AI文件发厂前整理助手.zip",
-                        "packageSha256":  "0fa5840a6b82c6bd29d0696f32bc0a1b98e146acdff1db63d4b419ad58e8c1ec",
+                        "packageSha256":  "6d1b92ea224190003b0aefeff6a8c63fd9f4af7cb8be846326310532bbf58fe1",
                         "files":  [
                                       {
                                           "name":  "AI_文件发厂前整理助手.jsx",
@@ -84,16 +86,16 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  4095,
-                                          "sha256":  "308b090123ba08d453e9ed8b6cf164f10a4352873c05dcf5539c27db703b0e47"
+                                          "sizeBytes":  4496,
+                                          "sha256":  "202aecdb586c0f30bea1ea8404f3831f46391edd347fd4908db3f202d03b6f95"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1749,
-                                          "sha256":  "d98b25645f4544e03d900a43417809101380c4342c3f3952b1ae0a150ef4c775"
+                                          "sizeBytes":  4158,
+                                          "sha256":  "9b6da96380d561248730f22919ea4bc5a7c216c3893a3af3ac8e6e7de9759d9f"
                                       }
                                   ],
-                        "sizeBytes":  8196,
+                        "sizeBytes":  9187,
                         "fileCount":  3
                     },
                     {
@@ -116,7 +118,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS批量导出助手.zip",
-                        "packageSha256":  "aaa63d38b01560a755b5c41abcbf5f52ffc65319a7f9673c3fec73d4a5302b8f",
+                        "packageSha256":  "e6b220bf26c1dfaa34e45a2ed448382b4232b6ce2463736c72b8bb84ba2618c7",
                         "files":  [
                                       {
                                           "name":  "PS批量导出助手.jsx",
@@ -130,8 +132,8 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       },
                                       {
                                           "name":  "一键安装到Photoshop.ps1",
@@ -139,7 +141,7 @@
                                           "sha256":  "53cb231366fbb7efea1b65d9384810acd7a9a7ac1166dfad6d01065aee7d3dd7"
                                       }
                                   ],
-                        "sizeBytes":  7376,
+                        "sizeBytes":  7931,
                         "fileCount":  4
                     },
                     {
@@ -162,12 +164,12 @@
                                   ],
                         "downloadUrl":  "downloads/ps-guide-slice-export/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%88%87%E7%89%87%E5%AF%BC%E5%87%BA.zip",
                         "packageName":  "PS参考线切片导出.zip",
-                        "packageSha256":  "58f50aa410f4afa72a7ca43be4491c699055db3df38c9ece9aaddb53e8232832",
+                        "packageSha256":  "efa01e5ff4761d8ea480758cf340f1c6da84cbb5831d0228e6375133f9023f1f",
                         "files":  [
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       },
                                       {
                                           "name":  "一键导出参考线切片.jsx",
@@ -180,7 +182,7 @@
                                           "sha256":  "5be1d63785da777622006729f99a55ac77b8853bb43096902f244997adf1baa5"
                                       }
                                   ],
-                        "sizeBytes":  5602,
+                        "sizeBytes":  6157,
                         "fileCount":  3
                     },
                     {
@@ -203,7 +205,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-white-ink-layer/PS%E7%99%BD%E5%A2%A8%E5%9B%BE%E5%B1%82%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "PS白墨图层自动生成插件.zip",
-                        "packageSha256":  "21829b2f5f8eee99bf17724df40b96e9b7db7c462ab7d5b48bd9978cd58d54d7",
+                        "packageSha256":  "7817c8026b2e0cd0a20ede429656fca6a6771715c00559252f96566195e18903",
                         "files":  [
                                       {
                                           "name":  "PS_自动生成白墨图层.jsx",
@@ -217,11 +219,11 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       }
                                   ],
-                        "sizeBytes":  9887,
+                        "sizeBytes":  10442,
                         "fileCount":  3
                     },
                     {
@@ -245,7 +247,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/PS%E8%BD%AE%E5%BB%93%E5%8C%96%E6%8F%8F%E8%BE%B9%E5%8A%A9%E6%89%8B%20V2.zip",
                         "packageName":  "PS轮廓化描边助手 V2.zip",
-                        "packageSha256":  "cc349b17ad6fcce67ac89d0fc9a5cae626fc884e4b2a899fb5a044ff9eddd580",
+                        "packageSha256":  "04734ea33ba44ae3a21bf61672e0ed7a53a5e6f7cb2d7b04799e03aafee70631",
                         "files":  [
                                       {
                                           "name":  "01_PS运行_轮廓化描边助手V2.jsx",
@@ -264,11 +266,11 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "0472f2678152702f26dbc7618744d253f03808a8cc45a4df73e26e69ff3b7434"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "13070658fd736e94642a38be72116f4ac711aa3ae776e4f8e298dd451ecea4a0"
                                       }
                                   ],
-                        "sizeBytes":  12108,
+                        "sizeBytes":  12664,
                         "fileCount":  4
                     },
                     {
@@ -291,7 +293,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/PS%E7%94%BB%E6%9D%BF%E5%AF%B9%E8%B1%A1%E6%98%BE%E7%A4%BA_%E9%9A%94%E7%A6%BB%E5%B7%A5%E5%85%B7.zip",
                         "packageName":  "PS画板对象显示_隔离工具.zip",
-                        "packageSha256":  "2e43d57dcdfb9dbbe434ad0d8f130bb9a1fc6fe3b790447723f88945c9ca667c",
+                        "packageSha256":  "3b19141277a05996bea913d44e5c9481f1a55db9357d9e5e769eff85ffa2a9d8",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
@@ -300,8 +302,8 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       },
                                       {
                                           "name":  "显示所有对象.jsx",
@@ -319,7 +321,7 @@
                                           "sha256":  "9bd656fdb14fd2b80d50b70755666ee8b76e48a3e7a4324fc8bcae3ba4c70aa8"
                                       }
                                   ],
-                        "sizeBytes":  7531,
+                        "sizeBytes":  8086,
                         "fileCount":  5
                     },
                     {
@@ -343,7 +345,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-long-image-performance/PS%E9%95%BF%E5%9B%BE%E4%B8%8D%E5%8D%A1%E4%BC%98%E5%8C%96%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS长图不卡优化助手.zip",
-                        "packageSha256":  "2a45f53e470c4c4c5a70a995378bc128a08aa4b52fb5c156cd69b762be927bbd",
+                        "packageSha256":  "bd065c3822888d8471c1f21e20aede67be0e24e4110ebbaac753d966866a7162",
                         "files":  [
                                       {
                                           "name":  "PS_LongImage_Performance_Assistant.jsx",
@@ -362,11 +364,11 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1632,
-                                          "sha256":  "f940ecb6ed047ce2c0d29339b34b4daa5822fa448f6af36a11e7f0f4ce86c83d"
+                                          "sizeBytes":  3611,
+                                          "sha256":  "0c9fa0609d5b4e174389d51814c80359eb04bfe8e57c7054f5001f754474720e"
                                       }
                                   ],
-                        "sizeBytes":  45235991,
+                        "sizeBytes":  45236546,
                         "fileCount":  4
                     },
                     {
@@ -389,7 +391,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-auto-cutline/AI%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%88%80%E7%BA%BF%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI自动生成刀线插件.zip",
-                        "packageSha256":  "a77f4b66f891730e18bf8e3277fa77e13be3b093e9ad9266ce0819ce20b6e6b8",
+                        "packageSha256":  "46d0cb17b3d36681146b65e115c96de589f51e2c254d41868e3b212bc25226f6",
                         "files":  [
                                       {
                                           "name":  "AI_自动生成刀线.jsx",
@@ -403,11 +405,11 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1634,
-                                          "sha256":  "c0a954306a496b746d8aaffa473fcfb6b84d6db2d7230f493135f8cda3c44d0f"
+                                          "sizeBytes":  3613,
+                                          "sha256":  "b9488be2f1ab32d5e1e593a7f7bcfc85c467356b29a07008405c7ed3b4dc490b"
                                       }
                                   ],
-                        "sizeBytes":  10903,
+                        "sizeBytes":  11459,
                         "fileCount":  3
                     },
                     {
@@ -431,7 +433,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-locate-object-hotkey/AI%E5%9B%BE%E5%B1%82%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%BF%AB%E6%8D%B7%E9%94%AE.zip",
                         "packageName":  "AI图层定位对象快捷键.zip",
-                        "packageSha256":  "efbff3ed4d6f434231056a645f6b7c3680385ac95acc98dc4216dcaa44a0c1fd",
+                        "packageSha256":  "292d40c259d5aa53151c3c2775991d5f24d96efb3547beed386037c2ce1b7907",
                         "files":  [
                                       {
                                           "name":  "AI_Locate_Object_Hotkey.ps1",
@@ -455,8 +457,8 @@
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
-                                          "sizeBytes":  1634,
-                                          "sha256":  "c0a954306a496b746d8aaffa473fcfb6b84d6db2d7230f493135f8cda3c44d0f"
+                                          "sizeBytes":  3613,
+                                          "sha256":  "b9488be2f1ab32d5e1e593a7f7bcfc85c467356b29a07008405c7ed3b4dc490b"
                                       },
                                       {
                                           "name":  "停止AI定位对象快捷键.bat",
@@ -464,7 +466,7 @@
                                           "sha256":  "b8939def373a380e0761d1e5140cc3ecef76551462db740cba6db958860b9144"
                                       }
                                   ],
-                        "sizeBytes":  5304,
+                        "sizeBytes":  5860,
                         "fileCount":  6
                     }
                 ]
