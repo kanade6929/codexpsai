@@ -105,6 +105,27 @@ function Test-PluginApp($plugin, [string]$appName) {
   return $false
 }
 
+function Get-InstallerMessage($plugin, [string]$name, [string]$fallback) {
+  if ($null -ne $plugin.installerMessages) {
+    $property = $plugin.installerMessages.PSObject.Properties[$name]
+    if ($null -ne $property -and -not [string]::IsNullOrWhiteSpace([string]$property.Value)) {
+      return [string]$property.Value
+    }
+  }
+  return $fallback
+}
+
+function ConvertTo-BatMessageCommand([string]$message) {
+  if ($message -cmatch "^[\x00-\x7F]*$") {
+    return ("echo " + $message)
+  }
+
+  $escaped = $message.Replace("'", "''")
+  $script = "[Console]::WriteLine('" + $escaped + "')"
+  $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($script))
+  return ("powershell.exe -NoLogo -NoProfile -NonInteractive -EncodedCommand " + $encoded + " 2>nul")
+}
+
 function Write-GeneratedInstallerBat($plugin, [string]$path) {
   $installPhotoshop = Test-PluginApp $plugin "Photoshop"
   $installIllustrator = Test-PluginApp $plugin "Illustrator"
@@ -119,6 +140,22 @@ function Write-GeneratedInstallerBat($plugin, [string]$path) {
       }
     }
   }
+
+  $msgRequestAdmin = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "requestAdmin" "Requesting administrator permission...")
+  $msgElevationFailed = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "elevationFailed" "Installation did not start with administrator permission.")
+  $msgRunAsAdmin = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "runAsAdmin" "Please right-click this BAT and choose Run as administrator.")
+  $msgAdminNotObtained = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "adminNotObtained" "Administrator permission was not obtained.")
+  $msgNoJsx = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "noJsx" "No JSX plugin file was found beside this installer.")
+  $msgExtractZip = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "extractZip" "Please extract the whole ZIP first, then double-click this BAT again.")
+  $msgNoAdobeFolder = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "noAdobeFolder" "No Photoshop or Illustrator script folder was found.")
+  $msgConfirmAdobe = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "confirmAdobe" "Please confirm Adobe is installed under C:\Program Files\Adobe.")
+  $msgCompleted = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "completed" "Installation completed successfully.")
+  $msgRestartAdobe = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "restartAdobe" "Restart Adobe, then open File - Scripts to run the tool.")
+  $msgLog = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "log" "Log file:")
+  $msgFailedPhotoshop = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "failedPhotoshop" "Failed to install for Photoshop:")
+  $msgInstalledPhotoshop = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "installedPhotoshop" "Installed for Photoshop:")
+  $msgFailedIllustrator = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "failedIllustrator" "Failed to install for Illustrator:")
+  $msgInstalledIllustrator = ConvertTo-BatMessageCommand (Get-InstallerMessage $plugin "installedIllustrator" "Installed for Illustrator:")
 
   if ($installPhotoshop -and $installIllustrator) {
     $installLine = 'call :installByName "%%~fJ" "%%~nxJ"'
@@ -145,13 +182,14 @@ if /i "%~1"=="--elevated" goto :elevated
 fltmc >nul 2>&1
 if "%errorlevel%"=="0" goto :elevated
 
-echo Requesting administrator permission...
+$msgRequestAdmin
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "try { `$p = Start-Process -FilePath '%~f0' -ArgumentList '--elevated' -Verb RunAs -WorkingDirectory '%~dp0' -Wait -PassThru; exit `$p.ExitCode } catch { Write-Host `$_.Exception.Message; exit 1 }"
 if not "%errorlevel%"=="0" (
   echo.
-  echo Installation did not start with administrator permission.
-  echo Please right-click this BAT and choose Run as administrator.
-  echo See log: %LOG_FILE%
+  $msgElevationFailed
+  $msgRunAsAdmin
+  $msgLog
+  echo %LOG_FILE%
   >> "%LOG_FILE%" echo Elevation failed or was cancelled.
   echo.
   pause
@@ -162,8 +200,8 @@ exit /b
 :elevated
 fltmc >nul 2>&1
 if not "%errorlevel%"=="0" (
-  echo Administrator permission was not obtained.
-  echo Please right-click this BAT and choose Run as administrator.
+  $msgAdminNotObtained
+  $msgRunAsAdmin
   >> "%LOG_FILE%" echo Administrator check failed after elevation.
   echo.
   pause
@@ -179,22 +217,23 @@ for %%J in (*.jsx) do (
 )
 
 if "%SOURCE_COUNT%"=="0" (
-  echo No JSX plugin file was found beside this installer.
-  echo Please extract the whole ZIP first, then double-click this BAT again.
+  $msgNoJsx
+  $msgExtractZip
   >> "%LOG_FILE%" echo No JSX source file was found.
 ) else if "%FOUND%"=="0" (
-  echo No Photoshop or Illustrator script folder was found.
-  echo Please confirm Adobe is installed under C:\Program Files\Adobe.
+  $msgNoAdobeFolder
+  $msgConfirmAdobe
   >> "%LOG_FILE%" echo No supported Adobe script folder was found.
 ) else (
   echo.
-  echo Installation completed successfully.
-  echo Restart Adobe, then open File - Scripts to run the tool.
+  $msgCompleted
+  $msgRestartAdobe
   >> "%LOG_FILE%" echo Installation completed successfully.
 )
 
 echo.
-echo Log: %LOG_FILE%
+$msgLog
+echo %LOG_FILE%
 pause
 popd
 exit /b
@@ -222,9 +261,11 @@ for /d %%D in ("%ProgramFiles%\Adobe\Adobe Photoshop*") do (
   if exist "%%~fD\Presets\Scripts\" (
     copy /y "%~1" "%%~fD\Presets\Scripts\%~2" >> "%LOG_FILE%" 2>&1
     if errorlevel 1 (
-      echo Failed [Photoshop] %%~nxD\Presets\Scripts\%~2
+      $msgFailedPhotoshop
+      echo %%~nxD\Presets\Scripts\%~2
     ) else (
-      echo Installed [Photoshop] %%~nxD\Presets\Scripts\%~2
+      $msgInstalledPhotoshop
+      echo %%~nxD\Presets\Scripts\%~2
       set "FOUND=1"
     )
   )
@@ -258,9 +299,11 @@ exit /b
 :copyIllustratorToDir
 ${obsoleteIllustratorLines}copy /y "%~1" "%AI_TARGET_DIR%\%~2" >> "%LOG_FILE%" 2>&1
 if errorlevel 1 (
-  echo Failed [Illustrator] %AI_TARGET_DIR%\%~2
+  $msgFailedIllustrator
+  echo %AI_TARGET_DIR%\%~2
 ) else (
-  echo Installed [Illustrator] %AI_TARGET_DIR%\%~2
+  $msgInstalledIllustrator
+  echo %AI_TARGET_DIR%\%~2
   set "FOUND=1"
   set "COPIED_AI_DIR=1"
 )
