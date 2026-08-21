@@ -66,30 +66,33 @@ function New-ZipFromDirectory([string]$sourceDir, [string]$zipPath) {
 
 function Write-GeneratedUsage($plugin, [string]$path) {
   $apps = ($plugin.apps -join " / ")
+  $usage = $script:manifest.usageMessages
   $notes = ""
   foreach ($note in @($plugin.notes)) {
-    $notes += ("- " + $note + [Environment]::NewLine)
+    if ($note -notmatch "^\d+\.\d+\.\d+\s") {
+      $notes += ("- " + $note + [Environment]::NewLine)
+    }
   }
 
   $text = @"
 $($plugin.name)
 
-Purpose:
+$($usage.installTitle)
+$($usage.extractStep)
+$($usage.runInstallerStep)
+$($usage.restartStep)
+
+$($usage.useTitle)
+$($usage.runStep)
+
+$($usage.purposeTitle)
 $($plugin.summary)
 
-Apps:
+$($usage.environmentTitle)
 $apps
-
-Install / Run:
-$($plugin.install)
-
-Requirements:
 $($plugin.requirements)
 
-Status:
-$($plugin.status)
-
-Notes:
+$($usage.notesTitle)
 $notes
 "@
 

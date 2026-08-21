@@ -1,11 +1,11 @@
 ﻿{
-    "generatedAt":  "2026-08-21 11:56:46",
+    "generatedAt":  "2026-08-21 12:04:07",
     "pluginCount":  10,
     "plugins":  [
                     {
                         "slug":  "ps-artboard-four-piece",
                         "name":  "PS批量导出画板商品四件套",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop"
@@ -23,7 +23,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-artboard-four-piece/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E7%94%BB%E6%9D%BF%E5%95%86%E5%93%81%E5%9B%9B%E4%BB%B6%E5%A5%97.zip",
                         "packageName":  "PS批量导出画板商品四件套.zip",
-                        "packageSha256":  "6079a7e104e7a8819e84089fbc28f2d2f17db8e4e1387eb9a97580c46ae89701",
+                        "packageSha256":  "a8acfd143d329b9a7984b7921c3defa034c9add5f77b8652fdb6bef59d3d399b",
                         "files":  [
                                       {
                                           "name":  "PS批量导出画板商品四件套_交接说明.docx",
@@ -32,8 +32,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  639,
-                                          "sha256":  "88b91f2200bab36fa56c2e116d77a1bc0bd7a36a94378de34d8440e9bf8bcbe7"
+                                          "sizeBytes":  551,
+                                          "sha256":  "62c04d273eb670bdc6c01653c4979be3da6cda63fdeb9318d918ed9fa90645a0"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -46,13 +46,13 @@
                                           "sha256":  "d1586d5293b2967227d24809cc936aa8ec317c4828be09d12d20aeed180d3ab1"
                                       }
                                   ],
-                        "sizeBytes":  781296,
+                        "sizeBytes":  781230,
                         "fileCount":  4
                     },
                     {
                         "slug":  "ai-embed-all-links",
                         "name":  "AI文件发厂前整理助手",
-                        "version":  "1.5.3",
+                        "version":  "1.5.4",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator"
@@ -80,7 +80,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-embed-all-links/AI%E6%96%87%E4%BB%B6%E5%8F%91%E5%8E%82%E5%89%8D%E6%95%B4%E7%90%86%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "AI文件发厂前整理助手.zip",
-                        "packageSha256":  "13b6ada1e74a4a5b4c56f5705c4cff7d01f68ec0e3f49c637e42dd2f81b7c7b0",
+                        "packageSha256":  "d3a73ef0df1cf76580934f78f6e0e158d9d3f01faba89c2160237287de5b7596",
                         "files":  [
                                       {
                                           "name":  "AI_文件发厂前整理助手.jsx",
@@ -89,8 +89,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  4560,
-                                          "sha256":  "6cec2e2c675b7092a9e3e253e3c0c5bcc957a780b2d87534dcdcd859a213f686"
+                                          "sizeBytes":  1370,
+                                          "sha256":  "6b2cdaab40ab7e40d86fcc296066d4da6066bf3a83bb8079a162c9cfe0144052"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -98,13 +98,13 @@
                                           "sha256":  "5049cdc48fef4dc2e1a99a6d511b087d74f8c960dbcba3d8eefe962978cc44be"
                                       }
                                   ],
-                        "sizeBytes":  9604,
+                        "sizeBytes":  8282,
                         "fileCount":  3
                     },
                     {
                         "slug":  "ps-existing-slice-export",
                         "name":  "PS批量导出助手",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop"
@@ -122,7 +122,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-existing-slice-export/PS%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS批量导出助手.zip",
-                        "packageSha256":  "0b4f0c1267f6822e243e18af138282ebdbecfe231aadb017f89503268f12ac17",
+                        "packageSha256":  "6eb367e5a54ca19c045c4ad123790864280109136186dbf3a2366a093b779a85",
                         "files":  [
                                       {
                                           "name":  "PS批量导出助手.jsx",
@@ -131,8 +131,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1114,
-                                          "sha256":  "6db0011cf87a277a7fb3aaa78f428244000c993c6a08120935b34146fc3dd0e8"
+                                          "sizeBytes":  771,
+                                          "sha256":  "1239c5187e80d53f50c502a2ba893b333367c7a5ed2b1c127bf090e9b6823e20"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -140,13 +140,13 @@
                                           "sha256":  "cb33fc60e19aa49bb27513d7797fa66096b2a3f37b854f513dae8164f4d94391"
                                       }
                                   ],
-                        "sizeBytes":  7605,
+                        "sizeBytes":  7405,
                         "fileCount":  3
                     },
                     {
                         "slug":  "ps-guide-slice-export",
                         "name":  "PS参考线切片导出",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop"
@@ -164,7 +164,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-guide-slice-export/PS%E5%8F%82%E8%80%83%E7%BA%BF%E5%88%87%E7%89%87%E5%AF%BC%E5%87%BA.zip",
                         "packageName":  "PS参考线切片导出.zip",
-                        "packageSha256":  "340e5076b5f020c72f608a41e7fcf083b79fd9292524604aa0adf468cb781f2c",
+                        "packageSha256":  "1453363159a10800ccc12eba2c51037dbeef23744cd19995407fba78bf277e8b",
                         "files":  [
                                       {
                                           "name":  "双击一键安装.bat",
@@ -178,17 +178,17 @@
                                       },
                                       {
                                           "name":  "一键导出参考线切片_使用说明.txt",
-                                          "sizeBytes":  776,
-                                          "sha256":  "5be1d63785da777622006729f99a55ac77b8853bb43096902f244997adf1baa5"
+                                          "sizeBytes":  716,
+                                          "sha256":  "9674dd1a8b0a58e023c0c6ac442668981cd0cb2fe4c6dcb214b766b2b8c8429d"
                                       }
                                   ],
-                        "sizeBytes":  6598,
+                        "sizeBytes":  6588,
                         "fileCount":  3
                     },
                     {
                         "slug":  "ps-white-ink-layer",
                         "name":  "PS白墨图层自动生成插件",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop"
@@ -206,7 +206,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-white-ink-layer/PS%E7%99%BD%E5%A2%A8%E5%9B%BE%E5%B1%82%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "PS白墨图层自动生成插件.zip",
-                        "packageSha256":  "a7c740667c2a06b1a46634925c76a1efa799f3377ffc993575c4ebfc95bc235b",
+                        "packageSha256":  "9f1d57369dc0f5fbffccbfb80cd50c8aefafcbd3f1404224526e3d2abf89cb66",
                         "files":  [
                                       {
                                           "name":  "PS_自动生成白墨图层.jsx",
@@ -215,8 +215,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  3812,
-                                          "sha256":  "372d774e771b15fa2d614c4f832f53008e552ce0c1b85600b5421b86bc92791c"
+                                          "sizeBytes":  1255,
+                                          "sha256":  "915332c952ae47e16a0136bd8bdaf7fbfcf7c9c4a666a0aae119cfa490a0d0fa"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -224,13 +224,13 @@
                                           "sha256":  "cb33fc60e19aa49bb27513d7797fa66096b2a3f37b854f513dae8164f4d94391"
                                       }
                                   ],
-                        "sizeBytes":  10883,
+                        "sizeBytes":  9759,
                         "fileCount":  3
                     },
                     {
                         "slug":  "ps-ai-outline-stroke-v2",
                         "name":  "PS轮廓化描边助手 V2",
-                        "version":  "2.0.1",
+                        "version":  "2.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop",
@@ -249,7 +249,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-ai-outline-stroke-v2/PS%E8%BD%AE%E5%BB%93%E5%8C%96%E6%8F%8F%E8%BE%B9%E5%8A%A9%E6%89%8B%20V2.zip",
                         "packageName":  "PS轮廓化描边助手 V2.zip",
-                        "packageSha256":  "29e00e09b56b6e7ecb886f3be5790bff7dba506ea9fd0d739a6ec7e0e9c2bfe2",
+                        "packageSha256":  "2220b88fc6ce4c120b9d434d381b0e75e1393b58cec5e32c2572e29df659ac15",
                         "files":  [
                                       {
                                           "name":  "01_PS运行_轮廓化描边助手V2.jsx",
@@ -263,8 +263,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  5541,
-                                          "sha256":  "1427edd167069cd9bbb8447d0005546229ffdf7b13522454470625a1d7e2d3df"
+                                          "sizeBytes":  1273,
+                                          "sha256":  "ac9f2a585336578c692ee2dbbc8c10b0e194422df95d9a949e3a2775611fcbd6"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -272,13 +272,13 @@
                                           "sha256":  "2c2f65f98d9e69fa6f1f5c2a5d6cc1b953e766234b01ed3367da0625528874a4"
                                       }
                                   ],
-                        "sizeBytes":  13103,
+                        "sizeBytes":  11341,
                         "fileCount":  4
                     },
                     {
                         "slug":  "ps-layer-visibility-tools",
                         "name":  "PS画板对象显示/隔离工具",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop"
@@ -296,12 +296,12 @@
                                   ],
                         "downloadUrl":  "downloads/ps-layer-visibility-tools/PS%E7%94%BB%E6%9D%BF%E5%AF%B9%E8%B1%A1%E6%98%BE%E7%A4%BA_%E9%9A%94%E7%A6%BB%E5%B7%A5%E5%85%B7.zip",
                         "packageName":  "PS画板对象显示_隔离工具.zip",
-                        "packageSha256":  "31e547a569e490f3b8904c1beeae3b23df4da1c1c21a7617217b317211f6ed55",
+                        "packageSha256":  "eaae0cfe6c83ae7220167e1c0cb025205b5a790a598bbb54b83106f02dcd4b60",
                         "files":  [
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  665,
-                                          "sha256":  "04e6b8f6f46509dda35b60e93cb1dc17a7afbcd783fd45dc3fb4ceeb006c0f4a"
+                                          "sizeBytes":  562,
+                                          "sha256":  "33354c75e461a6e95df11262087ca24f0f1ed344e9cf608c45e55b4387b31627"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -324,13 +324,13 @@
                                           "sha256":  "9bd656fdb14fd2b80d50b70755666ee8b76e48a3e7a4324fc8bcae3ba4c70aa8"
                                       }
                                   ],
-                        "sizeBytes":  8598,
+                        "sizeBytes":  8516,
                         "fileCount":  5
                     },
                     {
                         "slug":  "ps-long-image-performance",
                         "name":  "PS长图不卡优化助手",
-                        "version":  "2.0.1",
+                        "version":  "2.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Photoshop",
@@ -349,7 +349,7 @@
                                   ],
                         "downloadUrl":  "downloads/ps-long-image-performance/PS%E9%95%BF%E5%9B%BE%E4%B8%8D%E5%8D%A1%E4%BC%98%E5%8C%96%E5%8A%A9%E6%89%8B.zip",
                         "packageName":  "PS长图不卡优化助手.zip",
-                        "packageSha256":  "855bdee912a655e12361dace4c1078a1c32f8c8631e9a8d0dd039199dabece47",
+                        "packageSha256":  "9d1eea5d97a1041cffc010559e653af89c0a95bd34c9efa5c0925c141ccf440e",
                         "files":  [
                                       {
                                           "name":  "PS_LongImage_Performance_Assistant.jsx",
@@ -363,8 +363,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1949,
-                                          "sha256":  "d6730f2eeb0042979856b87e3cce2673b4c3574094ab8ddf24a917d87d294218"
+                                          "sizeBytes":  1082,
+                                          "sha256":  "b62f6af93d3d1aee6bfe53b71d87df74526004e8b18c79c9fef85994e5533a3c"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -372,13 +372,13 @@
                                           "sha256":  "cb33fc60e19aa49bb27513d7797fa66096b2a3f37b854f513dae8164f4d94391"
                                       }
                                   ],
-                        "sizeBytes":  45236987,
+                        "sizeBytes":  45236590,
                         "fileCount":  4
                     },
                     {
                         "slug":  "ai-auto-cutline",
                         "name":  "AI自动生成刀线插件",
-                        "version":  "1.0.1",
+                        "version":  "1.0.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator"
@@ -396,7 +396,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-auto-cutline/AI%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%88%80%E7%BA%BF%E6%8F%92%E4%BB%B6.zip",
                         "packageName":  "AI自动生成刀线插件.zip",
-                        "packageSha256":  "21e99368a37ae1b3cb02b1774939d4d679dfa634a4d464744711c8968befb7c8",
+                        "packageSha256":  "a822a8735ed35b4831c062863e4f2cffdfb1871caf68f6b2b6de1be369af137b",
                         "files":  [
                                       {
                                           "name":  "AI_自动生成刀线.jsx",
@@ -405,8 +405,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  3699,
-                                          "sha256":  "5a64ec64f227d9d1deba4f6312a18e1924f0158aa60dbd9ff24014cd740c253a"
+                                          "sizeBytes":  1116,
+                                          "sha256":  "d3dea2d246a5a27d25048d0f4ead45ad4c489f5d0e4f09451d89bd78eede416b"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -414,13 +414,13 @@
                                           "sha256":  "1ee3258b15a0b0e255fa7580c7694ba0b31f6d9dcb3f843cc7de92b34c283bed"
                                       }
                                   ],
-                        "sizeBytes":  11896,
+                        "sizeBytes":  10910,
                         "fileCount":  3
                     },
                     {
                         "slug":  "ai-locate-object-hotkey",
                         "name":  "AI图层定位对象快捷键",
-                        "version":  "1.1.1",
+                        "version":  "1.1.2",
                         "updatedAt":  "2026-08-21",
                         "apps":  [
                                      "Illustrator",
@@ -439,7 +439,7 @@
                                   ],
                         "downloadUrl":  "downloads/ai-locate-object-hotkey/AI%E5%9B%BE%E5%B1%82%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%BF%AB%E6%8D%B7%E9%94%AE.zip",
                         "packageName":  "AI图层定位对象快捷键.zip",
-                        "packageSha256":  "880fb54b4370dac02828e50375bf5f30ea6ffea561fe026d9927ab03509f9202",
+                        "packageSha256":  "4522d719648407ea055c6a4128662b94b33233c9f0d0660dd0d7161d4ba1e47b",
                         "files":  [
                                       {
                                           "name":  "AI_Locate_Object_Hotkey.ps1",
@@ -458,8 +458,8 @@
                                       },
                                       {
                                           "name":  "使用说明.txt",
-                                          "sizeBytes":  1662,
-                                          "sha256":  "287d162d2b1864571a0c47f1e7199fb427546c114492900f0d333aff6e80505d"
+                                          "sizeBytes":  972,
+                                          "sha256":  "459667da0c1972c1ffed2384ea2bd1de500260c205c1b016d83ae4ca433f19fa"
                                       },
                                       {
                                           "name":  "双击一键安装.bat",
@@ -472,7 +472,7 @@
                                           "sha256":  "b8939def373a380e0761d1e5140cc3ecef76551462db740cba6db958860b9144"
                                       }
                                   ],
-                        "sizeBytes":  6297,
+                        "sizeBytes":  5992,
                         "fileCount":  6
                     }
                 ]
