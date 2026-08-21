@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PS AI DIY 插件合集，归档 Codex 生成的 Photoshop / Illustrator 工具。">
+  <title>PS AI DIY 插件合集</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-plane ambient-plane-a"></div>
+    <div class="ambient-plane ambient-plane-b"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="topbar glass-panel" aria-label="站点导航">
+      <a class="brand" href="#top" aria-label="PS AI DIY 插件合集">
+        <span class="brand-mark">C</span>
+        <span>Adobe Tools</span>
+      </a>
+      <div class="nav-actions">
+        <a href="#plugins">插件</a>
+        <button class="nav-button" type="button" data-open-manifest>清单</button>
+      </div>
+    </nav>
+
+    <section id="top" class="hero-shell">
+      <div class="header-copy reveal">
+        <p class="eyebrow">Codex Adobe Tools Archive</p>
+        <h1 class="hero-title" aria-label="PS AI DIY 插件合集">
+          <span class="hero-title-top">PS AI</span>
+          <span class="hero-title-cn">DIY 插件合集</span>
+        </h1>
+        <p class="intro">统一归档 Photoshop、Illustrator 和 PS+AI 联动脚本。独立 ZIP 整包下载，展开查看包内文件。</p>
+        <div class="header-actions">
+          <a class="primary-link magnetic" href="#plugins">查看插件</a>
+          <button class="secondary-link manifest-trigger" type="button" data-open-manifest>查看清单</button>
+          <button class="secondary-link contact-trigger" type="button" data-open-contact>联系作者</button>
+        </div>
+      </div>
+
+      <div class="hero-dashboard glass-panel reveal" aria-label="插件合集概览">
+        <div class="dashboard-top">
+          <span class="status-dot"></span>
+          <span>Archive ready</span>
+        </div>
+        <img class="hero-image hero-cover-image" src="assets/ps-ai-diy-plugin-cover-clean.png" alt="PS AI DIY 插件合集二次元封面视觉">
+        <div class="dashboard-meta">
+          <div>
+            <strong id="heroTotal">0</strong>
+            <span>Tools</span>
+          </div>
+          <div>
+            <strong id="heroZip">0</strong>
+            <span>ZIPs</span>
+          </div>
+          <div>
+            <strong>SHA</strong>
+            <span>Checked</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="toolbar glass-panel reveal" aria-label="插件筛选">
+      <div class="filters" role="list" aria-label="分类">
+        <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+        <button class="filter-button" type="button" data-filter="photoshop">Photoshop</button>
+        <button class="filter-button" type="button" data-filter="illustrator">Illustrator</button>
+        <button class="filter-button" type="button" data-filter="bridge">PS+AI 联动</button>
+        <button class="filter-button" type="button" data-filter="assistant">独立助手</button>
+      </div>
+    </section>
+
+    <section class="stats reveal" aria-label="归档统计">
+      <div class="glass-panel">
+        <strong id="totalCount">0</strong>
+        <span>个工具</span>
+      </div>
+      <div class="glass-panel">
+        <strong id="zipCount">0</strong>
+        <span>个可下载 ZIP</span>
+      </div>
+      <div class="glass-panel">
+        <strong id="generatedAt">待生成</strong>
+        <span>最后整理</span>
+      </div>
+    </section>
+
+    <section id="plugins" class="plugin-grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty-state glass-panel" hidden>没有匹配的插件。</p>
+  </main>
+
+  <footer class="site-footer glass-panel">
+    <p>每个插件都是独立 ZIP 包，下载后解压即可看到主脚本和说明文件。标注“需实机确认”的工具，建议在 Photoshop / Illustrator 里用小文件试跑。</p>
+  </footer>
+
+  <dialog class="manifest-dialog" id="manifestDialog" aria-labelledby="manifestTitle">
+    <div class="manifest-panel glass-panel">
+      <div class="manifest-head">
+        <div>
+          <p class="eyebrow">Package Manifest</p>
+          <h2 id="manifestTitle">插件下载清单</h2>
+          <p id="manifestSummary">清单加载中...</p>
+        </div>
+        <button class="icon-button" type="button" data-close-manifest aria-label="关闭清单">×</button>
+      </div>
+      <div class="manifest-list" id="manifestList"></div>
+      <div class="manifest-foot">
+        <button class="download-link" type="button" data-close-manifest>完成</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="manifest-dialog contact-dialog" id="contactDialog" aria-labelledby="contactTitle">
+    <div class="manifest-panel contact-panel glass-panel">
+      <div class="manifest-head">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contactTitle">联系作者</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-contact aria-label="关闭联系作者">×</button>
+      </div>
+      <div class="contact-content">
+        <p><strong>插件和网站制作者：周上杰</strong></p>
+        <p>脚本为作者使用 Codex 自制并调试，如有疑问和 BUG 或者优化反馈，欢迎飞书小窗联系。</p>
+        <p class="contact-wechat"><span>微信</span><strong>zsj692938</strong></p>
+      </div>
+      <div class="manifest-foot">
+        <button class="download-link" type="button" data-close-contact>完成</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js?v=20260807-scroll-top"></script>
+</body>
+</html>
